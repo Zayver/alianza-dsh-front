@@ -1,0 +1,11 @@
+header{
+    @apply w-full top-0;
+
+    img{
+        @apply w-60 h-auto;
+    }
+}
+
+.header-container{
+    @apply w-full flex justify-between px-24 py-4;
+}

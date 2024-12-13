@@ -3,6 +3,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@components/*": ["./src/app/components/*"],
+      "@model/*": ["./src/app/model/*"],
+      "@services/*": ["./src/app/services/*"],
+      "@interceptors/*": ["./src/app/interceptors/*"],
+      "@guards/*": ["./src/app/guards/*"],
+    },
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
