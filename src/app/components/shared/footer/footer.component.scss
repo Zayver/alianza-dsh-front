@@ -1,5 +1,6 @@
 footer{
-    @apply w-full bg-[#333333];
+    @apply w-full ;
+    background-color: var(--header-bg);
 }
 
 .footer-container{

@@ -1,11 +1,13 @@
 :host{
-    @apply block sticky top-0 z-50 w-screen left-0;
+    @apply block sticky top-0 z-50 w-full left-0;
 }
 header {
-    @apply w-full top-0 shadow-lg sticky z-50 bg-[#333333];
+    @apply w-full top-0 shadow-lg sticky z-50 ;
+
+    background-color: var(--header-bg);
 
     img {
-        @apply md:w-60 w-32 h-auto cursor-pointer bg-white rounded-xl md:px-6 md:py-3 px-2 py-1;
+        @apply md:w-24 w-20 h-auto cursor-pointer rounded-xl md:px-6 md:py-3 px-2 py-1;
     }
 }
 

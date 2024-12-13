@@ -1,4 +1,4 @@
 :host{
-    @apply grid min-h-screen h-full overflow-y-scroll;
+    @apply grid min-h-screen h-full ;
     grid-template-rows: auto 1fr auto;
 }

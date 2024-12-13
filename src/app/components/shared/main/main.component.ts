@@ -5,7 +5,7 @@ import { FooterComponent } from '@components/shared/footer/footer.component';
 
 @Component({
   selector: 'alianzadsh-main',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet,],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
