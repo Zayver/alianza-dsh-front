@@ -3,6 +3,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "strict": true,
     "paths": {
       "@components/*": ["./src/app/components/*"],
       "@model/*": ["./src/app/model/*"],
@@ -10,8 +12,6 @@
       "@interceptors/*": ["./src/app/interceptors/*"],
       "@guards/*": ["./src/app/guards/*"],
     },
-    "outDir": "./dist/out-tsc",
-    "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,

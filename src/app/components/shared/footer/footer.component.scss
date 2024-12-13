@@ -1,0 +1,19 @@
+footer{
+    @apply w-full bg-[#333333];
+}
+
+.footer-container{
+    @apply w-full pt-3 pb-6 px-6 flex flex-col items-center text-center text-white gap-4;
+
+    img{
+        @apply w-12;
+    }
+
+    h1{
+        @apply text-xl font-bold text-white;
+    }
+
+    .footer-info{
+        @apply flex flex-col gap-2 items-center w-full;
+    }
+}

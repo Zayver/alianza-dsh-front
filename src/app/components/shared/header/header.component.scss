@@ -1,11 +1,31 @@
-header{
-    @apply w-full top-0;
+:host{
+    @apply block sticky top-0 z-50 w-screen left-0;
+}
+header {
+    @apply w-full top-0 shadow-lg sticky z-50 bg-[#333333];
 
-    img{
-        @apply w-60 h-auto;
+    img {
+        @apply md:w-60 w-32 h-auto cursor-pointer bg-white rounded-xl md:px-6 md:py-3 px-2 py-1;
     }
 }
 
-.header-container{
-    @apply w-full flex justify-between px-24 py-4;
+.header-container {
+    @apply w-full flex justify-between items-center md:px-56 md:py-4 px-6 py-2;
+}
+
+nav {
+    @apply flex md:gap-5 gap-3 relative overflow-hidden md:text-4xl text-2xl text-white;
+
+    ::ng-deep svg:hover{
+        @apply cursor-pointer;
+        animation: cycle 8s infinite;
+    }
+}
+
+@keyframes cycle {
+   20% { color:  var(--logo-red); } 
+   40% { color:  var(--logo-blue); } 
+   60% { color:  var(--logo-purple); } 
+   80% { color:  var(--logo-green); } 
+   100% { color: var(--logo-yellow); }
 }
