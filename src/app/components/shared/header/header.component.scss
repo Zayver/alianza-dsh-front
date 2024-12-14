@@ -29,3 +29,11 @@ nav {
    80% { color:  var(--logo-green); } 
    100% { color: var(--logo-yellow); }
 }
+
+.nav-container{
+    @apply flex flex-col gap-2;
+
+    .sub-nav{
+        @apply font-extrabold border-b-2 border-b-slate-200 text-xl cursor-pointer hover:bg-zinc-500;
+    }
+}

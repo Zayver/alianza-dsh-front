@@ -2,18 +2,21 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { lucideMenu, lucideShoppingCart, lucideUsers } from '@ng-icons/lucide';
+import { Popover } from 'primeng/popover';
 
 @Component({
   selector: 'alianzadsh-header',
-  imports: [NgIconComponent, RouterLink],
+  imports: [NgIconComponent, RouterLink, Popover],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   providers: [provideIcons({lucideUsers, lucideShoppingCart, lucideMenu})]
 })
 export class HeaderComponent {
-  readonly navigation = [
-    {path: "", icon: "lucideUsers"},
-    {path: "", icon: "lucideShoppingCart"},
-    {path: "", icon: "lucideMenu"},
+
+  readonly subNavigation = [
+    {path: 'contact', name: 'Contáctanos'},
+    {path: 'products', name: 'Productos'},
+    {path: '', name: 'Quiénes somos'},
+    {path: '', name: 'Nuestros clientes'},
   ]
 }

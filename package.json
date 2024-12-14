@@ -23,8 +23,11 @@
     "@angular/ssr": "^19.0.5",
     "@ng-icons/core": "^29.10.0",
     "@ng-icons/lucide": "^29.10.0",
+    "@primeng/themes": "^19.0.0-rc.1",
     "express": "^4.18.2",
+    "primeng": "^19.0.0-rc.1",
     "rxjs": "~7.8.0",
+    "tailwindcss-primeui": "^0.3.4",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
