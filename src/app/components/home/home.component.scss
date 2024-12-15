@@ -1,0 +1,145 @@
+#Hero {
+    .min-h-screen {
+      min-height: 100vh;
+    }
+    
+    .grid {
+      display: grid;
+    }
+  
+    .absolute {
+      position: absolute;
+    }
+  
+    .inset-0 {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  
+    .w-full {
+      width: 100%;
+    }
+  
+    .h-full {
+      height: 100%;
+    }
+  
+    .object-cover {
+      object-fit: cover;
+    }
+  
+    .relative {
+      position: relative;
+    }
+  
+    .md\:grid-cols-8 {
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(8, 1fr);
+      }
+    }
+  
+    .p-10 {
+      padding: 2.5rem;
+    }
+  
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+  
+    .md\:text-8xl {
+      @media (min-width: 768px) {
+        font-size: 6rem;
+      }
+    }
+  
+    .font-bold {
+      font-weight: 700;
+    }
+  
+    .text-center {
+      text-align: center;
+    }
+  
+    .text-indigo-50 {
+      color: #eef2ff;
+    }
+  
+    .text-indigo-200 {
+      color: #c7d2fe;
+    }
+  
+    .text-gray-100 {
+      color: #f3f4f6;
+    }
+  
+    .mt-6 {
+      margin-top: 1.5rem;
+    }
+  
+    .md\:mt-10 {
+      @media (min-width: 768px) {
+        margin-top: 2.5rem;
+      }
+    }
+  
+    a {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  
+    .bg-indigo-950 {
+      background-color: #312e81;
+    }
+  
+    .no-underline {
+      text-decoration: none;
+    }
+  
+    .text-indigo-100 {
+      color: #e0e7ff;
+    }
+  
+    .px-8 {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+  
+    .rounded-xl {
+      border-radius: 1rem;
+    }
+  
+    .hover\:bg-indigo-200:hover {
+      background-color: #c7d2fe;
+    }
+  
+    .hover\:text-indigo-950:hover {
+      color: #312e81;
+    }
+  
+    .ml-4 {
+      margin-left: 1rem;
+    }
+  
+    .border {
+      border-width: 1px;
+    }
+  
+    .border-indigo-950 {
+      border-color: #312e81;
+    }
+  
+    .hover\:bg-indigo-950:hover {
+      background-color: #312e81;
+    }
+  
+    .hover\:text-indigo-100:hover {
+      color: #eef2ff;
+    }
+  }
+  

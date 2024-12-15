@@ -16,7 +16,7 @@ export class HeaderComponent {
   readonly subNavigation = [
     {path: 'contact', name: 'Contáctanos'},
     {path: 'products', name: 'Productos'},
-    {path: '', name: 'Quiénes somos'},
+    {path: 'about-us', name: 'Quiénes somos'},
     {path: '', name: 'Nuestros clientes'},
   ]
 }

@@ -20,7 +20,7 @@ nav {
 
     ::ng-deep svg:hover{
         @apply cursor-pointer;
-        animation: cycle 8s infinite;
+        animation: cycle 2s infinite;
     }
 }
 
