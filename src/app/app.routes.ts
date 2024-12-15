@@ -10,7 +10,8 @@ export const routes: Routes = [
             { path: 'products', title: 'Productos | Alianza DSH', loadComponent: () => import('@components/products/products.component').then(m => m.ProductsComponent) },
             { path: 'about-us', title: 'Quienes somos | Alianza DSH', loadComponent: ()=> import('@components/aboutus/aboutus.component').then((m) => m.AboutusComponent) },
             { path: 'home', title: 'Inicio | Alianza DSH', loadComponent: ()=> import('@components/home/home.component').then(m => m.HomeComponent) },
-            { path: '**', loadComponent: ()=> import('@components/shared/e404/e404.component').then(m => m.E404Component)},
+            { path: 'product', title: 'Informe de producto | Alianza DSH', loadComponent: ()=> import('@components/productform/productform.component').then(m => m.ProductformComponent)},
+            { path: '**', title: 'No encontrado | Alianza DSH', loadComponent: ()=> import('@components/shared/e404/e404.component').then(m => m.E404Component)},
 
         ]
     }

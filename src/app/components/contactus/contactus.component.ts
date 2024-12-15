@@ -38,7 +38,6 @@ export class ContactusComponent implements OnInit{
     })
   }
 
-
   sendContactForm(){
     const request = this.contactForm.value
     //TODO make network request to backend
