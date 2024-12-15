@@ -1,0 +1,46 @@
+.wrapper{
+    @apply py-10 flex flex-col items-center gap-2 text-center;
+
+    .title{
+        @apply text-4xl font-extrabold;
+    }
+
+    .cards{
+        @apply w-full max-w-[100vw] md:px-4 py-4;
+        
+    }
+    .card{
+        @apply flex flex-col overflow-hidden rounded-3xl shadow-lg mx-4 md:h-full cursor-pointer;
+
+        img{
+            @apply w-full object-cover h-72;
+        }
+
+        .info{
+            @apply flex flex-col gap-2 md:p-4 py-2 p-1 md:flex-1;
+
+            h2{
+                @apply font-bold text-lg;
+            }
+
+            p{
+                @apply text-lg
+            }
+            .product-name{
+                @apply font-extrabold text-4xl;
+            }
+        }
+
+        .card-footer{
+            @apply font-extrabold text-4xl p-3;
+        }
+
+        &:hover{
+            transform: scale(1.03);
+        }
+    }
+}
+
+::ng-deep .p-carousel-viewport{
+    @apply py-6;
+}

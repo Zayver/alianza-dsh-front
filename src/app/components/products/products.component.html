@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <h1 class="title">Nuestros productos</h1>
+
+
+    <div class="cards">
+        <p-carousel [value]="this.products" [responsiveOptions]="this.responsive" [circular]="true" [numVisible]="3" [numScroll]="3">
+            <ng-template let-product let-index #item>
+                <div class="card">
+                    <div class="card-header">
+                        <img [src]="product.img" alt="IMAGE">
+                    </div>
+                    <div class="info">
+                        <h2 [style]="{color: product.color}">{{product.clients}} clientes</h2>
+                        <h1 class="product-name">{{product.name}}</h1>
+                        <p>{{product.details}}</p>
+                    </div>
+                    <div class="card-footer" [style]='{"background-color": product.color}'>
+                        <h3>{{product.price | currency}}</h3>
+                    </div>
+                </div>
+    
+            </ng-template>
+        </p-carousel>
+    </div>
+</div>

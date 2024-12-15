@@ -2,10 +2,20 @@
         <div class="header-container">
             <img src="logo_nl.png" alt="Logo" [routerLink]="['/']">
 
-            <nav>
-                <ng-icon name="lucideUsers"/>
-                <ng-icon name="lucideShoppingCart"/>
-                <ng-icon name="lucideMenu"/>
-            </nav>
-        </div>
-    </header>
+        <nav>
+            <ng-icon name="lucideUsers" />
+            <ng-icon name="lucideShoppingCart" />
+            <ng-icon name="lucideMenu" (click)="op.toggle($event)">
+                <p-popover #op>
+                    <div class="nav-container">
+                        @for (nav of this.subNavigation; track $index) {
+                            <div class="sub-nav">
+                                <h1 [routerLink]="['/',nav.path]">{{nav.name}}</h1>
+                            </div>
+                        }
+                    </div>
+                </p-popover>
+            </ng-icon>
+        </nav>
+    </div>
+</header>
