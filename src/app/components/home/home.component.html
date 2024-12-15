@@ -22,12 +22,11 @@
         </span>
       </h1>
       <p class="text-center text-white mt-6 md:mt-10">
-        En <strong>Alianza DSH SAS</strong>,
-        revolucionamos la manera en que las empresas gestionan sus operaciones.
-        Ofrecemos soluciones tecnológicas avanzadas para optimizar procesos como
-        contabilidad, inventarios, facturación, CRM, producción y mucho más,
-        adaptándonos a las necesidades de pequeñas, medianas y grandes
-        organizaciones.
+        En <strong>Alianza DSH SAS</strong>, revolucionamos la manera en que las
+        empresas gestionan sus operaciones. Ofrecemos soluciones tecnológicas
+        avanzadas para optimizar procesos como contabilidad, inventarios,
+        facturación, CRM, producción y mucho más, adaptándonos a las necesidades
+        de pequeñas, medianas y grandes organizaciones.
       </p>
       <div class="text-center mt-6 md:mt-10 flex justify-center">
         <a
@@ -47,3 +46,93 @@
     </div>
   </div>
 </section>
+
+<section class="features-section">
+  <div class="features-container">
+    <div class="features-wrapper">
+      <!-- Feature 1 -->
+      <div class="feature-item">
+        <div class="feature-icon">
+          <ng-icon name="lucideBoxes"></ng-icon>
+        </div>
+        <h3 class="feature-title">SOLUCIONES ADAPTADAS A NUESTROS CLIENTES</h3>
+        <p class="feature-description">
+          Entendemos que cada tipo de empresa tiene necesidades únicas, por lo
+          que nuestras soluciones están diseñadas específicamente para atender a
+          diferentes sectores
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="feature-item">
+        <div class="feature-icon">
+          <ng-icon name="lucideLayers"></ng-icon>
+        </div>
+        <h3 class="feature-title">MODULARIDAD Y ESCALABILIDAD</h3>
+        <p class="feature-description">
+          Nuestros productos permiten agregar módulos opcionales como CRM,
+          nómina, producción e importaciones según las necesidades específicas
+          de cada negocio. Esto brinda flexibilidad para adaptarse a empresas en
+          crecimiento o con requerimientos únicos.
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-item">
+        <div class="feature-icon">
+          <ng-icon name="lucideCable"></ng-icon>
+        </div>
+        <h3 class="feature-title">SOPORTE TECNICO ESPECIALIZADO</h3>
+        <p class="feature-description">
+          Además de las herramientas de software, ofrecemos soporte técnico
+          confiable y servicios adicionales como capacitación, consultoría y
+          mantenimiento de hardware, asegurando la continuidad operativa de los
+          clientes.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-content-container py-16 px-6 bg-gray-100">
+  <h2 class="featured-title text-center text-3xl font-bold text-gray-800 mb-4">
+    OPTIMIZA LA GESTIÓN DE TU EMPRESA CON SOLUCIONES A MEDIDA
+  </h2>
+
+  <p
+    class="featured-description text-center text-gray-600 max-w-2xl mx-auto mb-8"
+  >
+    Descubre cómo nuestras herramientas avanzadas de software facilitan la
+    administración de tu negocio. Desde contabilidad e inventarios hasta
+    facturación y gestión de servicios, ofrecemos soluciones adaptadas para
+    pequeñas, medianas y grandes empresas, potenciando tu productividad y
+    crecimiento.
+  </p>
+
+  <div class="featured-image relative max-w-4xl mx-auto">
+    <img
+      src="/images/home/image_home.jpg"
+      alt="Featured Content"
+      class="object-cover w-full h-auto rounded-lg shadow-lg"
+    />
+  </div>
+</section>
+
+<section class="team-section">
+    <div class="container">
+      <h2 class="title">Nuestro Equipo</h2>
+      <div class="team-grid">
+        <div *ngFor="let person of team" class="person-card">
+          <img
+            [src]="person.imageUrl"
+            [alt]="person.name"
+            class="person-image"
+          />
+          <h3 class="person-name">{{ person.name }}</h3>
+          <p class="person-role">{{ person.role }}</p>
+          <p class="person-contact">{{ person.contact }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  

@@ -2,9 +2,8 @@
     @apply block sticky top-0 z-50 w-full left-0;
 }
 header {
-    @apply w-full top-0 shadow-lg sticky z-50 ;
+    @apply w-full top-0 shadow-lg sticky z-50 bg-indigo-950;
 
-    background-color: var(--header-bg);
 
     img {
         @apply md:w-24 w-20 h-auto cursor-pointer rounded-xl md:px-6 md:py-3 px-2 py-1;
