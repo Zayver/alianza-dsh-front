@@ -9,17 +9,16 @@
       loop
       muted
       playsinline
-      class="w-full h-full object-cover"
+      class="w-full h-full object-cover blur opacity-100"
     ></video>
   </div>
 
   <div class="md:col-span-10 flex items-center justify-center p-10 relative">
     <div>
-      <h1 class="text-4xl md:text-8xl font-bold text-center text-black">
-        Transformamos tu negocio con
-        <span class="text-gray-900">
-          soluciones empresariales inteligentes
-        </span>
+      <h1 class="text-4xl md:text-8xl font-bold text-center text-indigo-950">
+        Transformamos tu
+        <span class="text-indigo-100"> negocio con </span> soluciones
+        <span class="text-indigo-100"> empresariales inteligentes </span>
       </h1>
       <p class="text-center text-white mt-6 md:mt-10">
         En <strong>Alianza DSH SAS</strong>, revolucionamos la manera en que las
@@ -119,27 +118,22 @@
 </section>
 
 <section class="team-section">
-    <div class="container">
-      <h2 class="title">NUESTRO EQUIPO</h2>
-      <p
-    class="featured-description text-center text-gray-600 max-w-2xl mx-auto mb-8"
-  >
-    Contamos con un equipo de profesionales altamente capacitados en diferentes 
-    áreas de la tecnología , comprometidos con la excelencia y la satisfacción
-    de nuestros clientes.
-  </p>
-      <div class="team-grid">
-        <div *ngFor="let person of team" class="person-card">
-          <img
-            [src]="person.imageUrl"
-            [alt]="person.name"
-            class="person-image"
-          />
-          <h3 class="person-name">{{ person.name }}</h3>
-          <p class="person-role">{{ person.role }}</p>
-          <p class="person-contact">{{ person.contact }}</p>
-        </div>
+  <div class="container">
+    <h2 class="title">NUESTRO EQUIPO</h2>
+    <p
+      class="featured-description text-center text-gray-600 max-w-2xl mx-auto mb-8"
+    >
+      Contamos con un equipo de profesionales altamente capacitados en
+      diferentes áreas de la tecnología , comprometidos con la excelencia y la
+      satisfacción de nuestros clientes.
+    </p>
+    <div class="team-grid">
+      <div *ngFor="let person of team" class="person-card">
+        <img [src]="person.imageUrl" [alt]="person.name" class="person-image" />
+        <h3 class="person-name">{{ person.name }}</h3>
+        <p class="person-role">{{ person.role }}</p>
+        <p class="person-contact">{{ person.contact }}</p>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>
