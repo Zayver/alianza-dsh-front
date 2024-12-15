@@ -1,4 +1,30 @@
-:host{
-    @apply grid min-h-screen h-full ;
-    grid-template-rows: auto 1fr auto;
+:host {
+  @apply grid min-h-screen h-full;
+  grid-template-rows: auto 1fr auto;
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  z-index: 300;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &:hover {
+    transform: scale(1.1); // Efecto de agrandamiento al pasar el cursor
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
