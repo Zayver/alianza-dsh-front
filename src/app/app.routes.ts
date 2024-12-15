@@ -7,6 +7,7 @@ export const routes: Routes = [
         children: [
             { path: 'contact', title: 'Contáctanos | Alianza DSH', loadComponent: () => import('@components/contactus/contactus.component').then(m => m.ContactusComponent)},
             { path: 'products', title: 'Productos | Alianza DSH', loadComponent: () => import('@components/products/products.component').then(m => m.ProductsComponent) },
+            { path: 'product', title: 'Informe de producto | Alianza DSH', loadComponent: ()=> import('@components/productform/productform.component').then(m => m.ProductformComponent)},
             { path: '**', loadComponent: ()=> import('@components/shared/e404/e404.component').then(m => m.E404Component)},
         ]
     }

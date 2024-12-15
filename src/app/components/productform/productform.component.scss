@@ -1,0 +1,52 @@
+.wrapper{
+    @apply p-2 py-10 flex flex-col items-center gap-2 text-center;
+    
+    .title{
+        @apply text-4xl font-extrabold;
+    }
+
+    .required::after{
+        content: '*';
+        color: red;
+    }
+
+    .card{
+        @apply flex mt-5 md:flex-row flex-col rounded-xl shadow-2xl justify-center items-center p-10 gap-20;
+    }
+
+    .product{
+        @apply flex flex-col gap-3 max-w-2xl h-full w-full;
+
+        h1{
+            @apply font-bold text-4xl;
+        }
+
+        p{
+            @apply text-lg;
+        }
+
+        h2{
+            @apply font-extrabold text-3xl ;
+        }
+    }
+
+    form{
+        @apply w-full flex flex-col items-center gap-5 max-w-xl;
+
+        .form-content{
+            @apply w-full flex flex-col gap-2;
+        }
+
+        .form-item{
+            @apply flex flex-col gap-1 w-full;
+        }
+
+        ::ng-deep{
+            input{
+                @apply w-full;
+            }
+        }
+    }
+
+    
+}
