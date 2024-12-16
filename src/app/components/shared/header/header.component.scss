@@ -3,7 +3,7 @@
 }
 header {
   @apply w-full top-0 shadow-lg sticky z-50 ;
-  background-color: #facc15;
+  background-color: #ffffff;
 
   img {
     @apply md:w-24 w-20 h-auto cursor-pointer rounded-xl md:px-6 md:py-3 px-2 py-1;
@@ -15,7 +15,7 @@ header {
 }
 
 nav {
-  @apply flex md:gap-5 gap-3 relative overflow-hidden md:text-4xl text-2xl text-white;
+  @apply flex md:gap-5 gap-3 relative overflow-hidden md:text-4xl text-2xl text-black;
 
   ::ng-deep svg:hover {
     @apply cursor-pointer text-white;

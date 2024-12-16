@@ -1,4 +1,5 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Button } from 'primeng/button'
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { InputText } from 'primeng/inputtext'
@@ -10,7 +11,7 @@ import { finalize, of } from 'rxjs';
 
 @Component({
   selector: 'alianzadsh-contactus',
-  imports: [Button, ReactiveFormsModule, InputText, InputNumber, Textarea, Select, KeyFilter],
+  imports: [ ReactiveFormsModule, InputText, InputNumber, Textarea, Select, KeyFilter, CommonModule],
   templateUrl: './contactus.component.html',
   styleUrl: './contactus.component.scss'
 })

@@ -1,51 +1,103 @@
-<div class="wrapper">
+<div class="contact-container">
+  <div class="titles">
     <h1 class="title">Contáctanos</h1>
-    <p>Por favor llena todos los campos siguientes, los elementos marcados con (<span class="text-red-500">*</span>) son obligatorios</p>
-    <hr class="w-full border-[1] border-zinc-400">
+    <p>
+      Por favor llena todos los campos siguientes, los elementos marcados con
+      (<span class="text-red-500">*</span>) son obligatorios
+    </p>
+  </div>
 
+  <div class="wrapper">
     <form [formGroup]="this.contactForm" (ngSubmit)="this.sendContactForm()">
-        <div class="form-content">
-            <div class="form-item">
-                <label for="firstName" class="required">Nombre</label>
-                <input type="text" id="firstName" pInputText formControlName="firstName">
-            </div>
-
-            <div class="form-item">
-                <label for="lastName" class="required">Apellido</label>
-                <input type="text" id="lastName" pInputText formControlName="lastName">
-            </div>
-
-            <div class="form-item expand custom-select">
-                <label for="serviceType" class="required">Tipo de servicio</label>
-                <p-select [options]="this.services" optionValue="value" optionLabel="display" formControlName="serviceType" id="serviceType"></p-select>
-            </div>            
-
-            <div class="form-item">
-                <label for="companyName" class="required">Nombre de la empresa</label>
-                <input type="text" id="companyName" pInputText formControlName="companyName">
-            </div>
-
-            <div class="form-item">
-                <label for="employeeQuantity">Cantidad de empleados</label>
-                <p-input-number formControlName="employeeQuantity" allowEmpty="true" [min]="0" showButtons="true"/>
-            </div>
-
-            <div class="form-item">
-                <label for="email" class="required">Correo empresarial</label>
-                <input type="text" formControlName="email" pInputText/>
-            </div>
-
-            <div class="form-item">
-                <label for="tel" class="required">Teléfono</label>
-                <input type="text" formControlName="tel" pInputText pKeyFilter="num"/>
-            </div>
-
-            <div class="form-item expand">
-                <label for="comments">Preguntas, comentarios, información extra</label>
-                <textarea name="" id="comments" pTextarea autoResize="true" formControlName="comments"></textarea>
-            </div>
+      <div class="form-content">
+        <div class="form-item">
+          <label for="firstName" class="required">Nombre</label>
+          <input
+            type="text"
+            id="firstName"
+            pInputText
+            formControlName="firstName"
+          />
         </div>
 
-        <p-button type="submit" [disabled]="this.contactForm.invalid" label="Enviar" [loading]="this.loading()"></p-button>
+        <div class="form-item">
+          <label for="lastName" class="required">Apellido</label>
+          <input
+            type="text"
+            id="lastName"
+            pInputText
+            formControlName="lastName"
+          />
+        </div>
+
+        <div class="form-item expand custom-select">
+          <label for="serviceType" class="required">Tipo de servicio</label>
+          <p-select
+            [options]="this.services"
+            optionValue="value"
+            optionLabel="display"
+            formControlName="serviceType"
+            id="serviceType"
+          ></p-select>
+        </div>
+
+        <div class="form-item">
+          <label for="companyName" class="required">Nombre de la empresa</label>
+          <input
+            type="text"
+            id="companyName"
+            pInputText
+            formControlName="companyName"
+          />
+        </div>
+
+        <div class="form-item">
+          <label for="employeeQuantity">Cantidad de empleados</label>
+          <p-input-number
+            formControlName="employeeQuantity"
+            allowEmpty="true"
+            [min]="0"
+            showButtons="true"
+          />
+        </div>
+
+        <div class="form-item">
+          <label for="email" class="required">Correo empresarial</label>
+          <input type="text" formControlName="email" pInputText />
+        </div>
+
+        <div class="form-item">
+          <label for="tel" class="required">Teléfono</label>
+          <input
+            type="text"
+            formControlName="tel"
+            pInputText
+            pKeyFilter="num"
+          />
+        </div>
+
+        <div class="form-item expand">
+          <label for="comments"
+            >Preguntas, comentarios, información extra</label
+          >
+          <textarea
+            name=""
+            id="comments"
+            pTextarea
+            autoResize="true"
+            formControlName="comments"
+          ></textarea>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="this.contactForm.invalid"
+        class="btn-submit"
+      >
+        <span *ngIf="this.loading(); else normalText">Cargando...</span>
+        <ng-template #normalText>Enviar</ng-template>
+      </button>
     </form>
+  </div>
 </div>
