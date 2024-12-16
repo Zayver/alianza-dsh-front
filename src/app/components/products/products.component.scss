@@ -1,23 +1,28 @@
 .wrapper{
-    @apply py-10 flex flex-col items-center gap-2 text-center;
+    @apply py-10 flex flex-col items-center gap-2 text-center w-full h-full bg-white;
+    background-color: white;
 
     .title{
-        @apply text-4xl font-extrabold;
+        @apply text-4xl font-extrabold text-black;
+    }
+
+    .subtitle{
+        @apply text-lg text-gray-500;
     }
 
     .cards{
-        @apply w-full max-w-[100vw] md:px-4 py-4;
+        @apply w-[90%] max-w-[100vw] md:px-4 py-4 bg-white;
         
     }
     .card{
-        @apply flex flex-col overflow-hidden rounded-3xl shadow-lg mx-4 md:h-full cursor-pointer;
+        @apply flex flex-col overflow-hidden rounded-3xl shadow-lg mx-4 md:h-full cursor-pointer bg-gray-300;
 
         img{
             @apply w-full object-cover h-72;
         }
 
         .info{
-            @apply flex flex-col gap-2 md:p-4 py-2 p-1 md:flex-1;
+            @apply flex flex-col gap-2 md:p-4 py-2 p-1 md:flex-1 text-black;
 
             h2{
                 @apply font-bold text-lg;
@@ -32,7 +37,8 @@
         }
 
         .card-footer{
-            @apply font-extrabold text-4xl p-3;
+            @apply font-extrabold text-4xl p-3 ;
+            background-color: #facc15;;
         }
 
         &:hover{

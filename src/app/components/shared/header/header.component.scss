@@ -2,7 +2,8 @@
   @apply block sticky top-0 z-50 w-full left-0;
 }
 header {
-  @apply w-full top-0 shadow-lg sticky z-50 bg-indigo-950;
+  @apply w-full top-0 shadow-lg sticky z-50 ;
+  background-color: #000000;
 
   img {
     @apply md:w-24 w-20 h-auto cursor-pointer rounded-xl md:px-6 md:py-3 px-2 py-1;
@@ -17,28 +18,11 @@ nav {
   @apply flex md:gap-5 gap-3 relative overflow-hidden md:text-4xl text-2xl text-white;
 
   ::ng-deep svg:hover {
-    @apply cursor-pointer;
-    animation: cycle 2s infinite;
+    @apply cursor-pointer text-white;
+    
   }
 }
 
-@keyframes cycle {
-  20% {
-    color: var(--logo-red);
-  }
-  40% {
-    color: var(--logo-blue);
-  }
-  60% {
-    color: var(--logo-purple);
-  }
-  80% {
-    color: var(--logo-green);
-  }
-  100% {
-    color: var(--logo-yellow);
-  }
-}
 
 .nav-container {
   @apply flex flex-col gap-2;

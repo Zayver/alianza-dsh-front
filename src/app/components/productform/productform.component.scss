@@ -1,52 +1,66 @@
-.wrapper{
-    @apply p-2 py-10 flex flex-col items-center gap-2 text-center;
-    
-    .title{
-        @apply text-4xl font-extrabold;
+.wrapper {
+  @apply p-2 py-10 flex flex-col items-center gap-2 text-center bg-white;
+
+  .title {
+    @apply text-4xl font-extrabold text-black;
+  }
+
+  .required::after {
+    content: "*";
+    color: red;
+  }
+
+  .card {
+    @apply flex mt-5 md:flex-row flex-col rounded-xl shadow-2xl justify-center items-center p-10 gap-20 bg-gray-300;
+  }
+
+  .product {
+    @apply flex flex-col gap-3 max-w-2xl h-full w-full text-black;
+
+    h1 {
+      @apply font-bold text-4xl text-gray-500;
     }
 
-    .required::after{
-        content: '*';
-        color: red;
+    p {
+      @apply text-lg  text-gray-800;
+      color: black
     }
 
-    .card{
-        @apply flex mt-5 md:flex-row flex-col rounded-xl shadow-2xl justify-center items-center p-10 gap-20;
+    h2 {
+      @apply font-extrabold text-3xl;
+    }
+  }
+
+  form {
+    @apply w-full flex flex-col items-center gap-5 max-w-xl text-black;
+
+    .form-content {
+      @apply w-full flex flex-col gap-2;
     }
 
-    .product{
-        @apply flex flex-col gap-3 max-w-2xl h-full w-full;
-
-        h1{
-            @apply font-bold text-4xl;
-        }
-
-        p{
-            @apply text-lg;
-        }
-
-        h2{
-            @apply font-extrabold text-3xl ;
-        }
+    .form-item {
+      @apply flex flex-col gap-1 w-full;
+    }
+    textarea {
+      @apply w-full p-2 border border-black rounded-md bg-white text-black;
     }
 
-    form{
-        @apply w-full flex flex-col items-center gap-5 max-w-xl;
-
-        .form-content{
-            @apply w-full flex flex-col gap-2;
-        }
-
-        .form-item{
-            @apply flex flex-col gap-1 w-full;
-        }
-
-        ::ng-deep{
-            input{
-                @apply w-full;
-            }
-        }
+    ::ng-deep {
+      input {
+        @apply w-full bg-white text-black;
+      }
     }
 
-    
+    p-button {
+      background-color: #000000 !important; /* Color de fondo azul */
+      color: white !important; /* Color del texto blanco */
+      border: white !important; /* Sin borde */
+      @apply text-white;
+
+      &:hover {
+        background-color: #ffffff !important; /* Color de fondo azul oscuro al hacer hover */
+        color: rgb(0, 0, 0) !important; /* Color del texto blanco */
+      }
+    }
+  }
 }

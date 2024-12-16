@@ -1,16 +1,17 @@
 footer{
-    @apply w-full bg-indigo-950 ;
+    @apply w-full  ;
+    background-color: #facc15;
 }
 
 .footer-container{
-    @apply w-full pt-3 pb-6 px-6 flex flex-col items-center text-center text-white gap-4;
+    @apply w-full pt-3 pb-6 px-6 flex flex-col items-center text-center text-black gap-4;
 
     img{
         @apply w-12;
     }
 
     h1{
-        @apply text-xl font-bold text-white;
+        @apply text-xl font-bold text-black;
     }
 
     .footer-info{

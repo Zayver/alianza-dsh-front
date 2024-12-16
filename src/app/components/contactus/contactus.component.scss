@@ -1,34 +1,135 @@
-.wrapper{
-    @apply p-2 py-10 flex flex-col items-center gap-2 text-center;
+.wrapper {
+  @apply p-2 py-10 flex flex-col items-center gap-2 text-center bg-white;
 
-    .title{
-        @apply text-4xl font-extrabold;
+  .title {
+    @apply text-4xl font-extrabold text-black;
+  }
+
+  .required::after {
+    content: "*";
+    color: red;
+  }
+
+  p-button {
+    background-color: #000000 !important; /* Color de fondo azul */
+    color: white !important; /* Color del texto blanco */
+    border: white !important; /* Sin borde */
+    @apply text-white;
+
+    &:hover {
+      background-color: #ffffff !important; /* Color de fondo azul oscuro al hacer hover */
+      color: rgb(0, 0, 0) !important; /* Color del texto blanco */
+    }
+  }
+
+  form {
+    @apply w-full flex flex-col items-center gap-5 text-black;
+  }
+
+  p {
+    @apply text-gray-500;
+  }
+
+  .form-content {
+    @apply grid gap-y-4 gap-x-11 md:grid-cols-2 grid-cols-1 md:w-4/6 max-w-5xl text-left text-black;
+
+    .form-item {
+      @apply flex flex-col gap-1 bg-white;
     }
 
-    .required::after{
-        content: '*';
-        color: red;
+    input {
+      @apply w-full p-2 border border-gray-300 rounded-md bg-white text-black;
+    }
+    
+    p-input-number {
+      @apply w-full p-2 border border-gray-300 rounded-md bg-white text-black;
     }
 
-    form{
-        @apply w-full flex flex-col items-center gap-5;
+    p-select {
+      @apply w-full p-2 border border-gray-300 rounded-md bg-gray-400 text-gray-500;
+      color: black
+    }
+    ::ng-deep .custom-select .p-dropdown-panel {
+        background-color: #ffffff !important;
+    }
+    
+    ::ng-deep .custom-select .p-dropdown-item {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+    
+    ::ng-deep .custom-select .p-dropdown-item:hover {
+        background-color: #eaeaea !important;
+    }
+    
+    ::ng-deep .custom-select .p-dropdown-item-active {
+        background-color: #ffffff !important;
+        color: #000000 !important;
     }
 
-    .form-content{
-        @apply grid gap-y-4 gap-x-11 md:grid-cols-2 grid-cols-1 md:w-4/6 max-w-5xl text-left;
-
-        .form-item{
-            @apply flex flex-col gap-1;
-        }
-
-        .expand{
-            grid-column: 1/-1
-        }
-
-        ::ng-deep{
-            input{
-                @apply w-full;
-            }
-        }
+    ::ng-deep .p-dropdown-item:hover {
+        background-color: #f0f0f0 !important; /* Fondo gris claro */
+        color: #010101 !important; /* Texto negro */
     }
+    
+    ::ng-deep .p-dropdown-item-active {
+        background-color: #e0e0e0 !important; /* Fondo para opción activa */
+        color: #010101 !important; /* Texto negro */
+    }
+    
+    ::ng-deep .p-dropdown .p-dropdown-label {
+        background-color: white !important;
+        color: black !important;
+    }
+
+    ::ng-deep .p-dropdown .p-dropdown-item {
+        background-color: white !important;
+        color: black !important;
+    }
+
+    ::ng-deep .p-dropdown .p-dropdown-item.p-highlight {
+        background-color: white !important;
+        color: black !important;
+    }
+
+    textarea {
+      @apply w-full p-2 border border-gray-300 rounded-md bg-white text-black;
+    }
+
+    .form-item {
+      @apply flex flex-col gap-1 bg-white;
+    }
+
+    .p-inputnumber {
+      background-color: #ffffff; 
+      color: black;
+    }
+    .p-inputnumber-button-up,
+    .p-inputnumber-button-down {
+      background-color: #ffffff; 
+    }
+    .p-inputnumber-input {
+        background-color: #ffffff;
+    }
+
+    ::ng-deep .p-inputnumber {
+        background-color: #ffffff; 
+    }
+    
+    ::ng-deep .p-inputnumber-input {
+        background-color: #ffffff; 
+        color: black;
+    }
+    
+
+    .expand {
+      grid-column: 1/-1;
+    }
+
+    ::ng-deep {
+      input {
+        @apply w-full;
+      }
+    }
+  }
 }

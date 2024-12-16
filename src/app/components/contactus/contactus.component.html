@@ -15,10 +15,10 @@
                 <input type="text" id="lastName" pInputText formControlName="lastName">
             </div>
 
-            <div class="form-item expand">
+            <div class="form-item expand custom-select">
                 <label for="serviceType" class="required">Tipo de servicio</label>
-                <p-select [options]="this.services" optionValue="value" optionLabel="display" formControlName="serviceType" id="serviceType"/>
-            </div>
+                <p-select [options]="this.services" optionValue="value" optionLabel="display" formControlName="serviceType" id="serviceType"></p-select>
+            </div>            
 
             <div class="form-item">
                 <label for="companyName" class="required">Nombre de la empresa</label>

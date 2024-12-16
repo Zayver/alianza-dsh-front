@@ -1,6 +1,6 @@
 :host {
-  @apply grid min-h-screen h-full;
-  grid-template-rows: auto 1fr auto;
+  @apply bg-white min-h-screen h-full w-full;
+  background-color: rgb(255, 255, 255);
 }
 
 .whatsapp-button {
