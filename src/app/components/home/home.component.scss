@@ -1,3 +1,123 @@
+
+/* Section styles */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+/* Video background styles */
+.video-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(0);
+  opacity: 1;
+}
+
+/* Content styles */
+.hero-content {
+  grid-column: span 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+  position: relative;
+}
+
+/* Heading styles */
+.hero-heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  color: #b5930d;
+}
+
+@media (min-width: 768px) {
+  .hero-heading {
+    font-size: 4.5rem;
+  }
+}
+
+.highlight {
+  color: #e0e0f7;
+}
+
+/* Paragraph styles */
+.hero-paragraph {
+  text-align: center;
+  color: #ffffff;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-paragraph {
+    margin-top: 2.5rem;
+  }
+}
+
+/* Button container styles */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-buttons {
+    margin-top: 2.5rem;
+  }
+}
+
+/* Button styles */
+.button {
+  padding: 0.75rem 2rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-button {
+  background-color: #facc15;
+  color: #000000;
+}
+
+.primary-button:hover {
+  background-color: #e0e0f7;
+  color: #facc15;
+}
+
+.secondary-button {
+  margin-left: 1rem;
+  background-color: transparent;
+  color: #e0e0f7;
+  border: 1px solid #1c1c54;
+}
+
+.secondary-button:hover {
+  background-color: #facc15;
+  color: #e0e0f7;
+}
+
+
+
+
 h2{
     font-size: 1.5rem;
     font-weight: 600;
@@ -247,7 +367,7 @@ h2{
       gap: 2rem;
   
       .person-card {
-        background: #262252;
+        background: #facc15;
         border: 1px solid #4a5568;
         border-radius: 10px;
         padding: 1.5rem;
@@ -268,20 +388,20 @@ h2{
         }
   
         .person-name {
-          color: #ffffff;
+          color: #000000;
           font-size: 1.25rem;
           font-weight: bold;
           margin-bottom: 0.5rem;
         }
   
         .person-role {
-          color: #cbd5e0;
+          color: #000000;
           font-size: 1rem;
           margin-bottom: 0.5rem;
         }
   
         .person-contact {
-          color: #a0aec0;
+          color: #313131;
           font-size: 0.875rem;
         }
       }

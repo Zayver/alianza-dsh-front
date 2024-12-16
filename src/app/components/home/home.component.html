@@ -1,50 +1,37 @@
-<section
-  id="Hero"
-  class="relative min-h-screen w-full grid grid-cols-1 md:grid-cols-8 overflow-hidden"
->
-  <div class="absolute inset-0 z-[-1]">
+<section id="Hero" class="hero-section">
+  <div class="video-background">
     <video
       src="/images/home/video_hero1.mp4"
       autoplay
       loop
       muted
       playsinline
-      class="w-full h-full object-cover blur opacity-100"
+      class="video-element"
     ></video>
   </div>
 
-  <div class="md:col-span-10 flex items-center justify-center p-10 relative">
+  <div class="hero-content">
     <div>
-      <h1 class="text-4xl md:text-8xl font-bold text-center text-indigo-950">
+      <h1 class="hero-heading">
         Transformamos tu
-        <span class="text-indigo-100"> negocio con </span> soluciones
-        <span class="text-indigo-100"> empresariales inteligentes </span>
+        <span class="highlight"> negocio con </span> soluciones
+        <span class="highlight"> empresariales inteligentes </span>
       </h1>
-      <p class="text-center text-white mt-6 md:mt-10">
+      <p class="hero-paragraph">
         En <strong>Alianza DSH SAS</strong>, revolucionamos la manera en que las
         empresas gestionan sus operaciones. Ofrecemos soluciones tecnológicas
         avanzadas para optimizar procesos como contabilidad, inventarios,
         facturación, CRM, producción y mucho más, adaptándonos a las necesidades
         de pequeñas, medianas y grandes organizaciones.
       </p>
-      <div class="text-center mt-6 md:mt-10 flex justify-center">
-        <a
-          href="products"
-          class="bg-indigo-950 no-underline text-indigo-100 px-8 py-3 rounded-xl hover:bg-indigo-200 hover:text-indigo-950 transition-colors duration-300"
-        >
-          Explorar Productos
-        </a>
-
-        <a
-          href="contact"
-          class="ml-4 no-underline text-indigo-100 px-8 py-3 rounded-xl border border-indigo-950 hover:bg-indigo-950 hover:text-indigo-100 transition-colors duration-300"
-        >
-          Contáctenos
-        </a>
+      <div class="hero-buttons">
+        <a href="products" class="button primary-button">Explorar Productos</a>
+        <a href="contact" class="button secondary-button">Contáctenos</a>
       </div>
     </div>
   </div>
 </section>
+
 
 <section class="features-section">
   <div class="features-container">
