@@ -1,6 +1,6 @@
 .contact-container {
   .title {
-    @apply text-4xl font-extrabold ;
+    @apply text-4xl font-extrabold;
     color: yellow;
   }
 
@@ -12,18 +12,17 @@
     @apply text-white  text-xl;
   }
 
-  @apply p-2 py-10 md:flex justify-between  md:gap-2 ;
+  @apply p-2 py-10 md:flex justify-between  md:gap-2;
   background-color: rgb(28, 14, 45);
 }
 
-.titles{
-    @apply  w-[50%]  pl-20 items-start p-4;
+.titles {
+  @apply w-[50%]  pl-20 items-start p-4;
 }
 
 .wrapper {
-  @apply grid-cols-2 p-2 py-10 flex flex-col items-center gap-2 text-center w-[90%] ;
+  @apply grid-cols-2 p-2 py-10 flex flex-col items-center gap-2 text-center w-[90%];
   background-color: rgb(28, 14, 45);
-
 
   button {
     background-color: #bbff00 !important; /* Color de fondo azul */
@@ -32,13 +31,18 @@
     @apply text-white m-2 w-24 h-12 rounded-xl;
 
     &:hover {
-      background-color: #ffffff !important; /* Color de fondo azul oscuro al hacer hover */
-      color: rgb(0, 0, 0) !important; /* Color del texto blanco */
+      cursor: pointer;
+      background-color: rgb(
+        28,
+        14,
+        45
+      ) !important; /* Color de fondo azul oscuro al hacer hover */
+      color: rgb(255, 255, 255) !important; /* Color del texto blanco */
     }
   }
 
   form {
-    @apply  flex flex-col items-center gap-5 text-black w-full;
+    @apply flex flex-col items-center gap-5 text-black w-full;
   }
 
   p {

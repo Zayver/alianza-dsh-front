@@ -8,11 +8,11 @@
   <div class="card">
     <div class="product">
       @if (this.product$ | async; as product) {
-      <h1 >{{ product.name }}</h1>
+      <h1>{{ product.name }}</h1>
 
       <p>{{ product.details }}</p>
 
-      <h2 >
+      <h2>
         {{ product.price | currency }}
       </h2>
       }
@@ -59,11 +59,13 @@
         </div>
       </div>
 
-      <p-button
+      <button
         type="submit"
-        label="Enviar"
         [disabled]="this.productForm.invalid"
-      ></p-button>
+        class="btn-submit"
+      >
+        Enviar
+      </button>
     </form>
   </div>
 </div>

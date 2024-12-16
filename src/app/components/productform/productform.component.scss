@@ -1,8 +1,9 @@
 .wrapper {
-  @apply p-2 py-10 flex flex-col items-center gap-2 text-center bg-white;
+  @apply p-2 py-10 flex flex-col items-center gap-2 text-center;
+  background-color: rgb(28, 14, 45);
 
   .title {
-    @apply text-4xl font-extrabold text-black;
+    @apply text-4xl font-extrabold text-yellow-500;
   }
 
   .required::after {
@@ -11,19 +12,19 @@
   }
 
   .card {
-    @apply flex mt-5 md:flex-row flex-col rounded-xl shadow-2xl justify-center items-center p-10 gap-20 bg-gray-300;
+    @apply flex mt-5 md:flex-row flex-col rounded-xl shadow-2xl justify-center items-center p-10 gap-20 bg-gray-100;
   }
 
   .product {
-    @apply flex flex-col gap-3 max-w-2xl h-full w-full text-black;
+    @apply flex flex-col gap-3 max-w-2xl h-full w-full text-yellow-500;
 
     h1 {
-      @apply font-bold text-4xl text-gray-500;
+      @apply font-bold text-4xl text-yellow-500;
     }
 
     p {
       @apply text-lg  text-gray-800;
-      color: black
+      color: black;
     }
 
     h2 {
@@ -51,15 +52,16 @@
       }
     }
 
-    p-button {
-      background-color: #000000 !important; /* Color de fondo azul */
-      color: white !important; /* Color del texto blanco */
+    button {
+      background-color: #bbff00 !important; /* Color de fondo azul */
+      color: rgb(0, 0, 0) !important; /* Color del texto blanco */
       border: white !important; /* Sin borde */
-      @apply text-white;
+      @apply text-white m-2 w-24 h-12 rounded-xl;
 
       &:hover {
-        background-color: #ffffff !important; /* Color de fondo azul oscuro al hacer hover */
-        color: rgb(0, 0, 0) !important; /* Color del texto blanco */
+        cursor: pointer;
+        background-color: rgb(28, 14, 45)!important; /* Color de fondo azul oscuro al hacer hover */
+        color: rgb(255, 255, 255) !important; /* Color del texto blanco */
       }
     }
   }

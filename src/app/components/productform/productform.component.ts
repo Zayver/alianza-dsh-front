@@ -12,7 +12,7 @@ import { catchError, Observable, tap, throwError } from 'rxjs';
 
 @Component({
   selector: 'alianzadsh-productform',
-  imports: [ReactiveFormsModule, Button, InputText, Textarea, KeyFilter, AsyncPipe, CurrencyPipe],
+  imports: [ReactiveFormsModule, InputText, Textarea, KeyFilter, AsyncPipe, CurrencyPipe],
   templateUrl: './productform.component.html',
   styleUrl: './productform.component.scss'
 })
