@@ -1,4 +1,3 @@
-
 /* Section styles */
 .hero-section {
   position: relative;
@@ -46,7 +45,7 @@
   font-size: 2.25rem;
   font-weight: 700;
   text-align: center;
-  color: #b5930d;
+  color: rgb(28, 14, 45);
 }
 
 @media (min-width: 768px) {
@@ -62,7 +61,7 @@
 /* Paragraph styles */
 .hero-paragraph {
   text-align: center;
-  color: #ffffff;
+  color: white;
   margin-top: 1.5rem;
 }
 
@@ -100,33 +99,28 @@
 }
 
 .primary-button:hover {
-  background-color: #e0e0f7;
+  background-color: rgb(28, 14, 45);
   color: #facc15;
 }
 
 .secondary-button {
   margin-left: 1rem;
-  background-color: transparent;
-  color: #e0e0f7;
+  background-color: rgb(28, 14, 45);
+  color: #facc15;
   border: 1px solid #1c1c54;
 }
 
 .secondary-button:hover {
   background-color: #facc15;
-  color: #e0e0f7;
+  color: rgb(28, 14, 45);
 }
 
-
-
-
-h2{
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-top: 1rem;
-    color: #111827;
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #111827;
 }
-
-
 
 #Hero {
   .min-h-screen {
@@ -272,14 +266,17 @@ h2{
     color: #eef2ff;
   }
 }
+
+
 .features-section {
   padding: 4rem 0;
-  background-color: #f8fafc; /* Fondo claro */
+  background-color: rgb(28, 14, 45); /* Fondo claro */
 }
 
 .features-container {
   text-align: center;
   padding: 2rem;
+  color: #ffffff; /* Color del texto */
 }
 
 .features-wrapper {
@@ -314,12 +311,12 @@ h2{
   font-size: 1.25rem; /* Tamaño del título */
   font-weight: 600;
   margin-top: 1rem;
-  color: #111827; /* Color del texto */
+  color: #ffffff; /* Color del texto */
 }
 
 .feature-description {
   margin-top: 0.5rem;
-  color: #4b5563; /* Gris claro */
+  color: #ffffff; /* Gris claro */
   font-size: 0.875rem;
 }
 
@@ -327,11 +324,13 @@ h2{
   @apply bg-gray-300 py-16 px-6;
 
   .featured-title {
-    @apply text-center text-3xl font-bold text-gray-800 mb-4;
+    @apply text-center text-3xl font-bold  mb-4;
+    color: rgb(28, 14, 45);
   }
 
   .featured-description {
-    @apply text-center text-gray-600 max-w-2xl mx-auto mb-8;
+    @apply text-center  max-w-2xl mx-auto mb-8;
+    color: rgb(68, 37, 107);
   }
 
   .featured-image {
@@ -343,69 +342,67 @@ h2{
   }
 }
 
-
 .team-section {
-    background-color: #ffffff; // Color oscuro de fondo
-    padding: 3rem 0;
-  
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
+  background-color: rgb(28, 14, 45); // Color oscuro de fondo
+  padding: 3rem 0;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .title {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+
+    .person-card {
+      background: #ffffff;
+      border: 1px solid #4a5568;
+      border-radius: 10px;
+      padding: 1.5rem;
       text-align: center;
-    }
-  
-    .title {
-      color: indigo-900;
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 2rem;
-    }
-  
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-  
-      .person-card {
-        background: #facc15;
-        border: 1px solid #4a5568;
-        border-radius: 10px;
-        padding: 1.5rem;
-        text-align: center;
-        transition: transform 0.3s ease, border-color 0.3s ease;
-  
-        &:hover {
-          transform: translateY(-5px);
-          border-color: #63b3ed;
-        }
-  
-        .person-image {
-          width: 120px;
-          height: 120px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin: 0 auto 1rem;
-        }
-  
-        .person-name {
-          color: #000000;
-          font-size: 1.25rem;
-          font-weight: bold;
-          margin-bottom: 0.5rem;
-        }
-  
-        .person-role {
-          color: #000000;
-          font-size: 1rem;
-          margin-bottom: 0.5rem;
-        }
-  
-        .person-contact {
-          color: #313131;
-          font-size: 0.875rem;
-        }
+      transition: transform 0.3s ease, border-color 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        border-color: #63b3ed;
+      }
+
+      .person-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1rem;
+      }
+
+      .person-name {
+        color: rgb(28, 14, 45);
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .person-role {
+        color: rgb(28, 14, 45);
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .person-contact {
+        color: rgb(28, 14, 45);
+        font-size: 0.875rem;
       }
     }
   }
-  
+}
