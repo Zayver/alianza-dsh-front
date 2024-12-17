@@ -9,15 +9,17 @@
     color: red;
   }
   p {
-    @apply text-white  text-xl;
+    @apply text-white  md:text-xl  ;
+    align-items: center;
+
   }
 
-  @apply p-2 py-10 md:flex justify-between  md:gap-2;
+  @apply md:p-2 md:py-10 md:flex md:justify-between  md:gap-2;
   background-color: rgb(28, 14, 45);
 }
 
 .titles {
-  @apply w-[50%]  pl-20 items-start p-4;
+  @apply md:w-[50%]  pl-20 md:items-start p-4;
 }
 
 .wrapper {
