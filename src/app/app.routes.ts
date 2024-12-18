@@ -11,8 +11,9 @@ export const routes: Routes = [
             { path: 'about-us', title: 'Quienes somos | Alianza DSH', loadComponent: ()=> import('@components/aboutus/aboutus.component').then((m) => m.AboutusComponent) },
             { path: 'home', title: 'Inicio | Alianza DSH', loadComponent: ()=> import('@components/home/home.component').then(m => m.HomeComponent) },
             { path: 'product', title: 'Informe de producto | Alianza DSH', loadComponent: ()=> import('@components/productform/productform.component').then(m => m.ProductformComponent)},
+            { path: 'clients', title: 'Nuestros clientes | Alianza DSH', loadComponent: ()=> import('@components/clients/clients.component').then(m => m.ClientsComponent)},
             { path: '**', title: 'No encontrado | Alianza DSH', loadComponent: ()=> import('@components/shared/e404/e404.component').then(m => m.E404Component)},
-
+            
         ]
     }
 ];

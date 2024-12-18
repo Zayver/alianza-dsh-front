@@ -1,5 +1,5 @@
 .wrapper{
-    @apply py-10 flex flex-col items-center gap-2 text-center w-full h-full bg-white;
+    @apply py-10 flex flex-col items-center gap-2 text-center bg-white;
     background-color: rgb(28, 14, 45);
 
     .title{
@@ -7,11 +7,11 @@
     }
 
     .subtitle{
-        @apply text-lg text-gray-300;
+        @apply text-xl text-gray-300;
     }
 
     .cards{
-        @apply w-[90%] max-w-[100vw] md:px-4 py-4; 
+        @apply w-full max-w-[100vw] md:px-4 py-4; 
         background-color: rgb(28, 14, 45);
         
     }
@@ -27,14 +27,14 @@
             color: rgb(28, 14, 45);
 
             h2{
-                @apply font-bold text-lg;
+                @apply font-bold md:text-lg;
             }
 
             p{
-                @apply text-lg
+                @apply md:text-lg
             }
             .product-name{
-                @apply font-extrabold text-4xl;
+                @apply font-extrabold md:text-4xl;
             }
         }
 

@@ -17,6 +17,6 @@ export class HeaderComponent {
     {path: 'contact', name: 'Contáctanos'},
     {path: 'products', name: 'Productos'},
     {path: 'about-us', name: 'Quiénes somos'},
-    {path: '', name: 'Nuestros clientes'},
+    {path: 'clients', name: 'Nuestros clientes'},
   ]
 }
