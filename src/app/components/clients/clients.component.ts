@@ -12,47 +12,33 @@ export class ClientsComponent {
 
   categories = [
     {
-      name: 'Carnicos',
-      icon: 'pi pi-fw pi-circle', // Ícono de PrimeIcons
+      name: 'Sector Salud',
+      icon: '/images/clients/category/health-care.png', 
       companies: [
         { name: 'CUNIT', logo: 'assets/logos/cunit.png' },
         { name: 'Zenu', logo: 'assets/logos/zenu.png' },
       ],
     },
     {
-      name: 'Galletas',
-      icon: 'pi pi-fw pi-star',
+      name: 'AutoServicios / Supermercados',
+      icon: '/images/clients/category/shopping-cart.png',
       companies: [
         { name: 'Ranchera', logo: 'assets/logos/ranchera.png' },
         { name: 'Rica', logo: 'assets/logos/rica.png' },
       ],
     },
     {
-      name: 'Chocolates',
-      icon: 'pi pi-fw pi-bookmark',
+      name: 'Comercializadoras / Distribuidoras',
+      icon: '/images/clients/category/order-fulfillment.png',
       companies: [
         { name: 'Pietran', logo: 'assets/logos/pietran.png' },
       ],
     },
     {
-      name: 'Cafe',
-      icon: 'pi pi-fw pi-coffee',
+      name: 'Produccion / Fabricacion servicios',
+      icon: '/images/clients/category/factory.png',
       companies: [
         { name: 'Hermo', logo: 'assets/logos/hermo.png' },
-      ],
-    },
-    {
-      name: 'Alimentos al Consumidor',
-      icon: 'pi pi-fw pi-apple',
-      companies: [
-        { name: 'Blue Ribbon', logo: 'assets/logos/blue-ribbon.png' },
-      ],
-    },
-    {
-      name: 'Helados',
-      icon: 'pi pi-fw pi-ice-cream',
-      companies: [
-        { name: 'Berard', logo: 'assets/logos/berard.png' },
       ],
     },
   ];

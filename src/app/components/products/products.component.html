@@ -1,6 +1,6 @@
 <div class="wrapper">
     <h1 class="title">NUESTROS PRODUCTOS</h1>
-    <p class="subtitle">Conoce nuestros productos y servicios</p>
+    <p class="subtitle">Conoce nuestros productos y servicios , selecciona uno para contactarnos!</p>
     <div class="cards">
         @if (this.products$ | async; as products) {
             <p-carousel [value]="products" [responsiveOptions]="this.responsive" [circular]="true" [numVisible]="3" [numScroll]="3">
