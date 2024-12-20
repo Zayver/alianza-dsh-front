@@ -22,7 +22,7 @@
 }
 
 .wrapper {
-  @apply grid-cols-2 p-2 py-10 flex flex-col items-center gap-2 text-center w-[90%];
+  @apply grid-cols-2 p-2 py-10 flex flex-col items-center gap-2 text-center w-[100%];
   background-color: rgb(28, 14, 45);
 
   button {
