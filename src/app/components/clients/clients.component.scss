@@ -1,6 +1,7 @@
-/* Contenedor principal */
+
 .container {
-  @apply bg-gray-200  rounded-lg shadow-md;
+  @apply bg-gray-200  rounded-lg  ;
+  height: 360px;
 }
 
 .category-btn {
