@@ -14,11 +14,20 @@ header {
   @apply w-full flex justify-between items-center md:px-36 md:py-2 px-6 py-1;
 }
 
+@keyframes cycle {
+  20% { color:  var(--logo-red); } 
+  40% { color:  var(--logo-blue); } 
+  60% { color:  var(--logo-purple); } 
+  80% { color:  var(--logo-green); } 
+  100% { color: var(--logo-yellow); }
+}
+
 nav {
   @apply flex md:gap-5 gap-3 relative overflow-hidden md:text-4xl text-2xl text-black;
 
   ::ng-deep svg:hover {
     @apply cursor-pointer text-white;
+    animation: cycle 5s infinite;
     
   }
 }
@@ -28,7 +37,7 @@ nav {
   @apply flex flex-col gap-2;
 
   .sub-nav {
-    @apply font-extrabold border-b-2 border-b-slate-200 text-xl cursor-pointer hover:bg-zinc-500;
+    @apply font-extrabold  text-xl cursor-pointer hover:bg-zinc-500;
   }
 }
 

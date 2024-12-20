@@ -3,12 +3,12 @@
     <h1 class="title">Contáctanos</h1>
     <p>
       Por favor llena todos los campos siguientes, los elementos marcados con
-      (<span class="text-red-500">*</span>) son obligatorios
+      (<span class="text-red-500">*</span>) son obligatorios.
     </p>
   </div>
 
   <div class="wrapper">
-    <form [formGroup]="this.contactForm" (ngSubmit)="this.sendContactForm()">
+    <form [formGroup]="form" (ngSubmit)="sendContactForm()">
       <div class="form-content">
         <div class="form-item">
           <label for="firstName" class="required">Nombre</label>
@@ -17,6 +17,7 @@
             id="firstName"
             pInputText
             formControlName="firstName"
+            aria-required="true"
           />
         </div>
 
@@ -27,17 +28,19 @@
             id="lastName"
             pInputText
             formControlName="lastName"
+            aria-required="true"
           />
         </div>
 
         <div class="form-item expand custom-select">
           <label for="serviceType" class="required">Tipo de servicio</label>
           <p-select
-            [options]="this.services"
+            [options]="services"
             optionValue="value"
             optionLabel="display"
             formControlName="serviceType"
             id="serviceType"
+            aria-required="true"
           ></p-select>
         </div>
 
@@ -48,32 +51,58 @@
             id="companyName"
             pInputText
             formControlName="companyName"
+            aria-required="true"
           />
         </div>
 
         <div class="form-item">
-          <label for="employeeQuantity">Cantidad de empleados</label>
+          <label for="employeeQuantity">Cantidad de Terminales</label>
           <p-input-number
             formControlName="employeeQuantity"
-            allowEmpty="true"
             [min]="0"
-            showButtons="true"
-          />
+            showButtons="false"
+            aria-label="Cantidad de Terminales"
+            [ngClass]="{
+              'disabled-filter': form.get('employeeQuantity')?.disabled
+            }"
+          ></p-input-number>
         </div>
 
         <div class="form-item">
           <label for="email" class="required">Correo empresarial</label>
-          <input type="text" formControlName="email" pInputText />
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            pInputText
+            aria-required="true"
+          />
         </div>
 
         <div class="form-item">
           <label for="tel" class="required">Teléfono</label>
           <input
             type="text"
+            id="tel"
             formControlName="tel"
             pInputText
             pKeyFilter="num"
+            aria-required="true"
           />
+        </div>
+
+        <div class="form-item expand custom-select">
+          <label for="attachments">Archivos adjuntos</label>
+          <p-fileupload
+            name="attachments"
+            [auto]="false"
+            [customUpload]="true"
+            multiple="true"
+            accept=".jpg,.png,.pdf,.docx,.xlsx"
+            chooseLabel="Seleccionar archivos"
+            (onUpload)="onFileUpload($event)"
+          >
+          </p-fileupload>
         </div>
 
         <div class="form-item expand">
@@ -81,21 +110,17 @@
             >Preguntas, comentarios, información extra</label
           >
           <textarea
-            name=""
             id="comments"
             pTextarea
             autoResize="true"
             formControlName="comments"
+            aria-label="Comentarios"
           ></textarea>
         </div>
       </div>
 
-      <button
-        type="submit"
-        [disabled]="this.contactForm.invalid"
-        class="btn-submit"
-      >
-        <span *ngIf="this.loading(); else normalText">Cargando...</span>
+      <button type="submit" [disabled]="form.invalid" class="btn-submit">
+        <span *ngIf="loading(); else normalText">Cargando...</span>
         <ng-template #normalText>Enviar</ng-template>
       </button>
     </form>
