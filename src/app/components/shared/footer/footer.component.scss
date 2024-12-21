@@ -11,7 +11,12 @@ footer{
     }
 
     h1{
-        @apply text-xl font-bold text-black;
+        @apply text-xl font-bold text-blue-950;
+    }
+
+    h3{
+        font-style:italic;
+        color: #6e6d6d;
     }
 
     .footer-info{

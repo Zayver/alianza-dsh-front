@@ -1,29 +1,31 @@
-<div class="container text-center p-6 h-[300px]">
+<div class="container text-center p-6">
 
-  <h2 class="text-3xl font-bold text-yellow-400 mb-8">
-    Estos son nuestros clientes
-  </h2>
-
-  <div class="flex flex-wrap justify-center gap-2 mb-8">
-    <button
-      *ngFor="let category of categories"
-      (click)="onCategorySelect(category.companies)"
-      class="category-btn flex items-center justify-center gap-2  bg-gray-100 border border-gray-300 rounded-md hover:bg-green-500 hover:text-white transition duration-300"
+    <h2 class="text-3xl font-bold text-blue-950 mb-8">
+      Estos son nuestros clientes
+    </h2>
+  
+    <div class="flex flex-wrap justify-center gap-2 mb-8">
+      <button
+        *ngFor="let category of categories; let i = index"
+        (click)="onCategorySelect(category.companies, i)"
+        class="category-btn flex items-center justify-center gap-2 bg-gray-100 border border-gray-300 rounded-md hover:bg-green-500 hover:text-white transition duration-300"
+        [ngClass]="{ 'bg-green-500 text-white': i === activeCategoryIndex }"
+      >
+        <img [src]="category.icon" alt="{{ category.name }} icon" />
+      </button>
+    </div>
+  
+    <!-- Logos de empresas -->
+    <div
+      class="flex flex-wrap justify-center gap-6"
+      *ngIf="selectedCompanies.length > 0"
     >
-      <img [src]="category.icon" alt="{{ category.name }} icon" />
-    </button>
+      <img
+        *ngFor="let company of selectedCompanies"
+        [src]="company.logo"
+        [alt]="company.name"
+        class="company-logo w-32 h-16 object-contain"
+      />
+    </div>
   </div>
-
-  <!-- Logos de empresas -->
-  <div
-    class="flex flex-wrap justify-center gap-6"
-    *ngIf="selectedCompanies.length > 0"
-  >
-    <img
-      *ngFor="let company of selectedCompanies"
-      [src]="company.logo"
-      [alt]="company.name"
-      class="company-logo w-32 h-16 object-contain"
-    />
-  </div>
-</div>
+  

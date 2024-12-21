@@ -1,13 +1,13 @@
 
 .container {
   @apply bg-gray-200   ;
-  height: 360px;
+  height: fit-content;
 }
 
 .category-btn {
     @apply flex items-center justify-center gap-2 px-4 py-2
       bg-blue-950 border border-gray-300 rounded-[50%] h-20 w-20
-      hover:bg-green-500 hover:text-white
+      hover:bg-yellow-500 hover:text-white
       transition duration-300;
   }
   
