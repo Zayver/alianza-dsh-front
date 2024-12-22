@@ -6,7 +6,10 @@ footer{
 .footer-container{
     @apply w-full pt-3 pb-6 px-6 flex flex-col items-center text-center text-black gap-4;
 
-    img{
+    .logo{
+        @apply w-72;
+    }
+    .whatsapp-icon{
         @apply w-12;
     }
 

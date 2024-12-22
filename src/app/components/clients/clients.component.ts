@@ -83,6 +83,10 @@ export class ClientsComponent {
           logo: '/images/clients/client/COMERCIALIZADORAS DISTRIBUIDORAS/LOGO MERKAUNION.jpeg',
         },
         {
+          name: 'Ariztor',
+          logo: '/images/clients/client/PRODUCCION FABRICACION/LogoAriztor.jpg',
+        },
+        {
           name: 'North Trade',
           logo: '/images/clients/client/COMERCIALIZADORAS DISTRIBUIDORAS/LOGO NORTH TRADE.jpg',
         },
@@ -93,10 +97,6 @@ export class ClientsComponent {
         {
           name: 'Megapets',
           logo: '/images/clients/client/COMERCIALIZADORAS DISTRIBUIDORAS/logo-megapetsm.webp',
-        },
-        {
-          name: 'Amp',
-          logo: '/images/clients/client/COMERCIALIZADORAS DISTRIBUIDORAS/LogoAmp.jpg',
         },
         {
           name: 'Animalcity',
@@ -153,8 +153,8 @@ export class ClientsComponent {
           logo: '/images/clients/client/PRODUCCION FABRICACION/Logo Tornirap.jpg',
         },
         {
-          name: 'Ariztor',
-          logo: '/images/clients/client/PRODUCCION FABRICACION/LogoAriztor.jpg',
+          name: 'Amp',
+          logo: '/images/clients/client/COMERCIALIZADORAS DISTRIBUIDORAS/LogoAmp.jpg',
         },
         {
           name: 'Aytex',
@@ -210,11 +210,17 @@ export class ClientsComponent {
     },
   ];
 
-  selectedCompanies = this.categories[1].companies; // Empresas de la primera categoría
-  activeCategoryIndex = 0;
+  selectedCompanies = this.categories[1].companies;
+  activeCategoryIndex: number = 1; 
+  selectedCategoryName: string = this.categories[1].name; 
 
-  onCategorySelect(companies: any[], index: number): void {
+  onCategorySelect(
+    companies: any[],
+    index: number,
+    categoryName: string
+  ): void {
     this.selectedCompanies = companies;
-    this.activeCategoryIndex = index; // Actualiza el botón activo
+    this.activeCategoryIndex = index;
+    this.selectedCategoryName = categoryName;
   }
 }
