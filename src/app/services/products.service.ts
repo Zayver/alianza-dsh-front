@@ -15,7 +15,7 @@ export class ProductsService {
         entrega, cartera, compras y órdenes de compra, cuentas por pagar, tesorería y contabilidad.
         Incluye POS y Mostrador para registro de ventas. Opcionalmente puede agregar módulos de
         CRM, nómina, producción o importaciones NO incluidos en el precio.`,
-      img: "billing.jpg",
+      img: "/images/products/empresarial.png",
       price: 50000,
       clients: 150,
       code: "sysplus_enterprise"
@@ -26,7 +26,7 @@ export class ProductsService {
         instalaciones. Manejo completo de inventario, facturación, pedidos, remisiones, ruteros de
         entrega, cartera, compras y órdenes de compra, cuentas por pagar y tesorería. Incluye la
         posibilidad de facturar con POS o Mostrador.`,
-      img: "commerce.jpg",
+      img: "/images/products/comercial.png",
       price: 150000,
       clients: 250,
       code: "sysplus_comercial"
@@ -34,7 +34,7 @@ export class ProductsService {
     {
       name: "SYSplus Contabilidad",
       details: `Para empresas cuyo objeto social no es el servicio contable.`,
-      img: "accounting.jpg",
+      img: "/images/products/contabilidad.png",
       price: 20000,
       clients: 500,
       code: "sysplus_accounting"
@@ -44,7 +44,7 @@ export class ProductsService {
       details: `Programa para una empresa de servicios que no lleva inventario ni compras. Manejo completo
         de facturación, cartera, contabilidad, cuentas por pagar y tesorería. Incluye la posibilidad de
         facturar con POS o Mostrador.`,
-      img: "services.jpg",
+      img: "/images/products/servicio.png",
       price: 300000,
       clients: 320,
       code: "sysplus_services"
@@ -56,7 +56,7 @@ export class ProductsService {
         entrega, cartera, compras y órdenes de compra, cuentas por pagar, tesorería y contabilidad.
         Incluye POS y Mostrador para registro de ventas. Opcionalmente puede agregar módulos de
         Producción, Nómina, CRM e Importaciones no incluidos en el precio.`,
-      img: "erp.jpg",
+      img: "/images/products/erp.png",
       price: 135000,
       clients: 20,
       code: "sysplus_erp"
@@ -64,7 +64,7 @@ export class ProductsService {
     {
       name: "Servicio de soporte",
       details: `Servicios de Hardware y Software, aplicación SYSplus. Desarrollo de aplicaciones.`,
-      img: "support.jpg",
+      img: "/images/products/soporte.png",
       price: 85000,
       clients: 1000,
       code: "support"

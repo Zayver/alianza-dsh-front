@@ -1,4 +1,4 @@
-import { AsyncPipe, CurrencyPipe } from '@angular/common';
+import { AsyncPipe} from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ProductsService } from '@services/products.service';
@@ -7,7 +7,7 @@ import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'alianzadsh-products',
-  imports: [CurrencyPipe, Carousel, AsyncPipe, RouterLink],
+  imports: [ Carousel, AsyncPipe, RouterLink],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })

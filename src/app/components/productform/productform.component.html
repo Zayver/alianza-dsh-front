@@ -8,13 +8,14 @@
   <div class="card">
     <div class="product">
       @if (this.product$ | async; as product) {
+
+        <div class="img">
+            <img [src]="product.img" alt="IMAGE">
+        </div>
       <h1>{{ product.name }}</h1>
 
       <p>{{ product.details }}</p>
 
-      <h2>
-        {{ product.price | currency }}
-      </h2>
       }
     </div>
 

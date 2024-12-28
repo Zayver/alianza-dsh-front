@@ -37,7 +37,11 @@
                 @apply font-extrabold md:text-4xl;
             }
         }
-
+        .card-header{
+            @apply font-extrabold text-4xl p-9 ;
+            color: rgb(28, 14, 45);
+            background-color: #ebfbbf;
+        }
         .card-footer{
             @apply font-extrabold text-4xl p-3 ;
             color: rgb(28, 14, 45);;
