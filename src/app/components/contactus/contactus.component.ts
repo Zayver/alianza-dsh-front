@@ -1,5 +1,4 @@
 import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {
   FormBuilder,
   FormGroup,
@@ -10,29 +9,39 @@ import { InputText } from 'primeng/inputtext';
 import { InputNumber } from 'primeng/inputnumber';
 import { KeyFilter } from 'primeng/keyfilter';
 import { Textarea } from 'primeng/textarea';
-import { HttpClientModule } from '@angular/common/http';
-import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
-import { RecaptchaModule, ReCaptchaV3Service } from 'ng-recaptcha-2';
+import { RecaptchaModule } from 'ng-recaptcha-2';
 import { environment } from '@environment/environment';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { NgClass } from '@angular/common';
+import { Button } from 'primeng/button';
+import { MailService } from '@services/mail.service';
+import { MessageService } from 'primeng/api';
+import { finalize, timer } from 'rxjs';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'alianzadsh-contactus',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    HttpClientModule,
     InputText,
     InputNumber,
     Textarea,
     KeyFilter,
-    CommonModule,
-    RecaptchaModule
+    RecaptchaModule,
+    NgClass,
+    Button
   ],
   templateUrl: './contactus.component.html',
   styleUrls: ['./contactus.component.scss'],
 })
 export class ContactusComponent implements OnInit {
-  private readonly formBuilder = inject(FormBuilder);
+  private readonly formBuilder = inject(FormBuilder)
+  private readonly mailService = inject(MailService)
+  private readonly messageService = inject(MessageService)
+  private readonly router = inject(Router)
+
   protected readonly recaptchaKey = environment.recaptchaKey
   recaptchaOk = signal(false)
   form!: FormGroup;
@@ -51,53 +60,38 @@ export class ContactusComponent implements OnInit {
   }
 
   sendContactForm() {
-    if (this.form.invalid) {
-      console.error('Formulario inválido.');
-      return;
-    }
-
     this.loading.set(true);
-
     const formData = this.form.value;
-    const templateParams = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      companyName: formData.companyName,
-      employeeQuantity: formData.employeeQuantity,
-      email: formData.email,
-      tel: formData.tel,
-      comments: formData.comments,
-    };
+    this.mailService.sendContactMail(formData).pipe(finalize(() => this.loading.set(false))).subscribe({
+      next: (response: EmailJSResponseStatus) => {
+        //Assuming all ok
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Gracias por comunicarte con nosotros, nos contactaremos tan pronto sea posible.'
+        })
+        timer(1500).subscribe(() => this.router.navigate(['/']))
+      },
+      error: () => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Ha ocurrido un error, intenta de nuevo más tarde por favor.'
+        })
+      }
+    })
 
-    emailjs
-      .send(
-        'service_p5o7l79', // Reemplaza con tu Service ID de EmailJS
-        'template_nrxkgd7', // Reemplaza con tu Template ID de EmailJS
-        templateParams,
-        'cXZ8_vlsvyH4TCZdK' // Reemplaza con tu User ID de EmailJS
-      )
-      .then(
-        (response: EmailJSResponseStatus) => {
-          console.log('Formulario enviado con éxito:', response.status, response.text);
-          alert('Formulario enviado con éxito');
-          this.form.reset();
-        },
-        (err: any) => {
-          console.error('Error al enviar el formulario:', err);
-          alert('Error al enviar el formulario. Por favor intenta nuevamente.');
-        }
-      )
-      .finally(() => this.loading.set(false));
   }
 
 
-  resolved(event: string | null){
+  resolved(event: string | null) {
     //FULL verification should be done with the backend
-    if(event === null){
+    if (event === null) {
       return //verification on client side failed
     }
     this.recaptchaOk.set(true)
   }
 
-
+  recaptchaError() {
+    //Error on verification or timeout
+    this.recaptchaOk.set(false)
+  }
 }

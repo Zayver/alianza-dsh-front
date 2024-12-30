@@ -61,19 +61,19 @@
       input {
         @apply w-full bg-white text-black;
       }
-    }
-
-    button {
-      background-color: #bbff00 !important; /* Color de fondo azul */
-      color: rgb(0, 0, 0) !important; /* Color del texto blanco */
-      border: white !important; /* Sin borde */
-      @apply text-white m-2 w-24 h-12 rounded-xl;
-
-      &:hover {
-        cursor: pointer;
-        background-color: rgb(28, 14, 45)!important; /* Color de fondo azul oscuro al hacer hover */
-        color: rgb(255, 255, 255) !important; /* Color del texto blanco */
+      button {
+        background-color: #bbff00 !important; /* Color de fondo azul */
+        color: rgb(0, 0, 0) !important; /* Color del texto blanco */
+        border: white !important; /* Sin borde */
+        @apply text-white m-2 w-24 h-12 rounded-xl;
+  
+        // &:hover {
+        //   cursor: pointer;
+        //   background-color: rgb(28, 14, 45)!important; /* Color de fondo azul oscuro al hacer hover */
+        //   color: rgb(255, 255, 255) !important; /* Color del texto blanco */
+        // }
       }
     }
+
   }
 }

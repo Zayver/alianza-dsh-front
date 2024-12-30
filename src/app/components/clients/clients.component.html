@@ -1,35 +1,31 @@
-<div class="container text-center p-6">
+<div class="wrapper text-center p-6">
   <h2 class="text-3xl font-bold text-blue-950 mb-8">
     Estos son nuestros clientes
   </h2>
 
   <div class="flex flex-wrap justify-center gap-2 mb-8">
-    <button
-      *ngFor="let category of categories; let i = index"
-      (click)="onCategorySelect(category.companies, i, category.name)"
+    @for (category of categories; track $index) {
+    <button (click)="onCategorySelect(category.companies, $index, category.name)"
       class="category-btn flex flex-col items-center justify-center gap-2 bg-gray-100 border border-gray-300 rounded-md hover:bg-green-500 hover:text-white transition duration-300"
-      [ngClass]="{ 'bg-green-500 text-white': i === activeCategoryIndex }"
-    >
-      <img
-        [src]="category.icon"
-        alt="{{ category.name }} icon"
-        class="w-8 h-8"
-      />
+      [ngClass]="{ 'bg-green-500 text-white': $index === activeCategoryIndex }">
+
+      <img [src]="category.icon" alt="{{ category.name }} icon" class="w-8 h-8" />
     </button>
+    }
+
   </div>
-  <div *ngIf="selectedCategoryName" class="mb-4">
+  @if (selectedCategoryName) {
+  <div class="mb-4">
     <h2 class="text-xl font-semibold text-gray-700"> {{ selectedCategoryName }}
     </h2>
   </div>
-  <div
-    class="flex flex-wrap justify-center gap-6"
-    *ngIf="selectedCompanies.length > 0"
-  >
-    <img
-      *ngFor="let company of selectedCompanies"
-      [src]="company.logo"
-      [alt]="company.name"
-      class="company-logo w-32 h-16 object-contain"
-    />
+  }
+  @if (selectedCompanies.length > 0) {
+  <div class="flex flex-wrap justify-center gap-6">
+    @for (company of selectedCompanies; track $index) {
+    <img [src]="company.logo" [alt]="company.name" class="company-logo w-32 h-16 object-contain" />
+    }
+
   </div>
+  }
 </div>

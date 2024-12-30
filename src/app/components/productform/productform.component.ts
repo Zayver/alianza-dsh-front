@@ -8,25 +8,30 @@ import { Button } from 'primeng/button';
 import { InputText } from 'primeng/inputtext';
 import { KeyFilter } from 'primeng/keyfilter';
 import { Textarea } from 'primeng/textarea';
-import { catchError, Observable, tap, throwError } from 'rxjs';
-import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { catchError, finalize, Observable, tap, throwError, timer } from 'rxjs';
 import { RecaptchaModule } from 'ng-recaptcha-2';
 import { environment } from '@environment/environment';
+import { MailService } from '@services/mail.service';
+import { EmailJSResponseStatus } from '@emailjs/browser';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'alianzadsh-productform',
-  imports: [ReactiveFormsModule, InputText, Textarea, KeyFilter, AsyncPipe, RecaptchaModule],
+  imports: [ReactiveFormsModule, InputText, Textarea, KeyFilter, AsyncPipe, RecaptchaModule, Button],
   templateUrl: './productform.component.html',
   styleUrl: './productform.component.scss'
 })
 export class ProductformComponent implements OnInit {
   product$!: Observable<Product>;
   productForm!: FormGroup;
+  loading = signal(false)
 
   protected readonly recaptchaKey = environment.recaptchaKey
   recaptchaOk = signal(false)
 
   private readonly productService = inject(ProductsService);
+  private readonly messageService = inject(MessageService)
+  private readonly mailService = inject(MailService);
   private readonly formBuilder = inject(FormBuilder);
   private readonly router = inject(Router);
 
@@ -67,34 +72,24 @@ export class ProductformComponent implements OnInit {
   }
 
   sendForm(): void {
-    if (this.productForm.invalid) {
-      console.error('Formulario inválido');
-      return;
-    }
-
     const formData = this.productForm.value;
-
-    emailjs.send(
-      'service_p5o7l79', // Reemplaza con tu ID de servicio
-      'template_b7lkzbj', // Reemplaza con tu ID de plantilla
-      {
-        productCode: formData.product,
-        companyName: formData.companyName,
-        tel: formData.tel,
-        email: formData.email,
-        comments: formData.comments,
+    this.loading.set(true)
+    this.mailService.sendMail(formData).pipe(finalize(()=> this.loading.set(false))).subscribe({
+      next:(response: EmailJSResponseStatus)=>{
+        //Assuming all ok
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Gracias por comunicarte con nosotros, nos contactaremos tan pronto sea posible.'
+        })
+        timer(1500).subscribe(()=> this.router.navigate(['/']))
       },
-      'cXZ8_vlsvyH4TCZdK' // Reemplaza con tu clave pública de EmailJS
-    )
-    .then((response: EmailJSResponseStatus) => {
-      console.log('¡Formulario enviado con éxito!', response.status, response.text);
-      alert('¡Formulario enviado con éxito!');
-      this.productForm.reset();
+      error:()=>{
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Ha ocurrido un error, intenta de nuevo más tarde por favor.'
+        })
+      }
     })
-    .catch((error) => {
-      console.error('Hubo un error al enviar el formulario:', error);
-      alert('Hubo un error al enviar el formulario. Por favor intenta de nuevo.');
-    });
   }
 
   resolved(event: string | null){
@@ -103,5 +98,10 @@ export class ProductformComponent implements OnInit {
       return //verification on client side failed
     }
     this.recaptchaOk.set(true)
+  }
+
+  recaptchaError(){
+    //Error on verification or timeout
+    this.recaptchaOk.set(false)
   }
 }

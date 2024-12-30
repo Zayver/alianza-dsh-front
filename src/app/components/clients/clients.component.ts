@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'alianzadsh-clients',
-  imports: [CommonModule, ButtonModule],
+  imports: [NgClass, ButtonModule],
   templateUrl: './clients.component.html',
   styleUrl: './clients.component.scss',
 })

@@ -25,21 +25,21 @@
   @apply grid-cols-2 p-2 py-10 flex flex-col items-center gap-2 text-center w-[100%];
   background-color: rgb(28, 14, 45);
 
-  button {
+  ::ng-deep button {
     background-color: #bbff00 !important; /* Color de fondo azul */
     color: rgb(0, 0, 0) !important; /* Color del texto blanco */
     border: white !important; /* Sin borde */
     @apply text-white m-2 w-24 h-12 rounded-xl;
 
-    &:hover {
-      cursor: pointer;
-      background-color: rgb(
-        28,
-        14,
-        45
-      ) !important; /* Color de fondo azul oscuro al hacer hover */
-      color: rgb(255, 255, 255) !important; /* Color del texto blanco */
-    }
+    // &:hover {
+    //   cursor: pointer;
+    //   background-color: rgb(
+    //     28,
+    //     14,
+    //     45
+    //   ) !important; /* Color de fondo azul oscuro al hacer hover */
+    //   color: rgb(255, 255, 255) !important; /* Color del texto blanco */
+    // }
   }
 
   form {

@@ -10,7 +10,7 @@
                     <div class="nav-container">
                         @for (nav of this.subNavigation; track $index) {
                             <div class="sub-nav">
-                                <h1 [routerLink]="['/',nav.path]">{{nav.name}}</h1>
+                                <h1 [routerLink]="['/',nav.path]" (click)="op.hide()">{{nav.name}}</h1>
                             </div>
                         }
                     </div>
