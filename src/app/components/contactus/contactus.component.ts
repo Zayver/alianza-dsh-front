@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormBuilder,
@@ -12,6 +12,8 @@ import { KeyFilter } from 'primeng/keyfilter';
 import { Textarea } from 'primeng/textarea';
 import { HttpClientModule } from '@angular/common/http';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { RecaptchaModule, ReCaptchaV3Service } from 'ng-recaptcha-2';
+import { environment } from '@environment/environment';
 
 @Component({
   selector: 'alianzadsh-contactus',
@@ -24,12 +26,15 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
     Textarea,
     KeyFilter,
     CommonModule,
+    RecaptchaModule
   ],
   templateUrl: './contactus.component.html',
   styleUrls: ['./contactus.component.scss'],
 })
 export class ContactusComponent implements OnInit {
   private readonly formBuilder = inject(FormBuilder);
+  protected readonly recaptchaKey = environment.recaptchaKey
+  recaptchaOk = signal(false)
   form!: FormGroup;
   loading = signal(false);
 
@@ -84,5 +89,15 @@ export class ContactusComponent implements OnInit {
       )
       .finally(() => this.loading.set(false));
   }
+
+
+  resolved(event: string | null){
+    //FULL verification should be done with the backend
+    if(event === null){
+      return //verification on client side failed
+    }
+    this.recaptchaOk.set(true)
+  }
+
 
 }

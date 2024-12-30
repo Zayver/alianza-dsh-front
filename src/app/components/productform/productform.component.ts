@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Product } from '@model/product';
@@ -10,16 +10,21 @@ import { KeyFilter } from 'primeng/keyfilter';
 import { Textarea } from 'primeng/textarea';
 import { catchError, Observable, tap, throwError } from 'rxjs';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { RecaptchaModule } from 'ng-recaptcha-2';
+import { environment } from '@environment/environment';
 
 @Component({
   selector: 'alianzadsh-productform',
-  imports: [ReactiveFormsModule, InputText, Textarea, KeyFilter, AsyncPipe],
+  imports: [ReactiveFormsModule, InputText, Textarea, KeyFilter, AsyncPipe, RecaptchaModule],
   templateUrl: './productform.component.html',
   styleUrl: './productform.component.scss'
 })
 export class ProductformComponent implements OnInit {
   product$!: Observable<Product>;
   productForm!: FormGroup;
+
+  protected readonly recaptchaKey = environment.recaptchaKey
+  recaptchaOk = signal(false)
 
   private readonly productService = inject(ProductsService);
   private readonly formBuilder = inject(FormBuilder);
@@ -90,5 +95,13 @@ export class ProductformComponent implements OnInit {
       console.error('Hubo un error al enviar el formulario:', error);
       alert('Hubo un error al enviar el formulario. Por favor intenta de nuevo.');
     });
+  }
+
+  resolved(event: string | null){
+    //FULL verification should be done with the backend
+    if(event === null){
+      return //verification on client side failed
+    }
+    this.recaptchaOk.set(true)
   }
 }

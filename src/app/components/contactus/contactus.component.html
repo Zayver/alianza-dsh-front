@@ -103,7 +103,11 @@
         </div>
       </div>
 
-      <button type="submit" [disabled]="form.invalid" class="btn-submit">
+        <div class="form-item expand">
+          <re-captcha (resolved)="resolved($event)" [siteKey]="this.recaptchaKey"></re-captcha>
+        </div>
+
+      <button type="submit" [disabled]="form.invalid && !this.recaptchaOk()" class="btn-submit">
         <span *ngIf="loading(); else normalText">Cargando...</span>
         <ng-template #normalText>Enviar</ng-template>
       </button>

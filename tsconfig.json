@@ -11,6 +11,7 @@
       "@services/*": ["./src/app/services/*"],
       "@interceptors/*": ["./src/app/interceptors/*"],
       "@guards/*": ["./src/app/guards/*"],
+      "@environment/*": ["./src/environments/*"],
     },
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,

@@ -58,11 +58,15 @@
             formControlName="comments"
           ></textarea>
         </div>
+
+        <div class="form-item expand">
+          <re-captcha (resolved)="resolved($event)" [siteKey]="this.recaptchaKey"></re-captcha>
+        </div>
       </div>
 
       <button
         type="submit"
-        [disabled]="this.productForm.invalid"
+        [disabled]="this.productForm.invalid && !this.recaptchaOk()"
         class="btn-submit"
       >
         Enviar
