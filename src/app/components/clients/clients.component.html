@@ -5,27 +5,37 @@
 
   <div class="flex flex-wrap justify-center gap-2 mb-8">
     @for (category of categories; track $index) {
-    <button (click)="onCategorySelect(category.companies, $index, category.name)"
-      class="category-btn flex flex-col items-center justify-center gap-2 bg-gray-100 border border-gray-300 rounded-md hover:bg-green-500 hover:text-white transition duration-300"
-      [ngClass]="{ 'bg-green-500 text-white': $index === activeCategoryIndex }">
+    <button
+      (click)="onCategorySelect(category.companies, $index, category.name)"
+      class="category-btn flex flex-col items-center justify-center gap-2 bg-gray-100 border border-gray-300 rounded-md hover:bg-yellow-500 hover:text-white transition duration-300"
+      [ngClass]="{ 'selected-button': $index === activeCategoryIndex }"
 
-      <img [src]="category.icon" alt="{{ category.name }} icon" class="w-8 h-8" />
+    >
+      <img
+        [src]="category.icon"
+        alt="{{ category.name }} icon"
+        class="w-8 h-8"
+      />
     </button>
-    }
 
+    }
   </div>
+
   @if (selectedCategoryName) {
   <div class="mb-4">
-    <h2 class="text-xl font-semibold text-gray-700"> {{ selectedCategoryName }}
+    <h2 class="text-xl font-semibold text-gray-700">
+      {{ selectedCategoryName }}
     </h2>
   </div>
-  }
-  @if (selectedCompanies.length > 0) {
+  } @if (selectedCompanies.length > 0) {
   <div class="flex flex-wrap justify-center gap-6">
     @for (company of selectedCompanies; track $index) {
-    <img [src]="company.logo" [alt]="company.name" class="company-logo w-32 h-16 object-contain" />
+    <img
+      [src]="company.logo"
+      [alt]="company.name"
+      class="company-logo w-32 h-16 object-contain"
+    />
     }
-
   </div>
   }
 </div>

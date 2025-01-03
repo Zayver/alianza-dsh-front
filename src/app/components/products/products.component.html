@@ -1,6 +1,8 @@
 <div class="wrapper">
     <h1 class="title">NUESTROS PRODUCTOS</h1>
-    <p class="subtitle">Conoce nuestros productos y servicios , selecciona uno para contactarnos!</p>
+    <p class="subtitle">Conoce nuestros productos y servicios , selecciona uno para contactarnos!
+        <br> *Opcionalmente puede agregar módulos de CRM, nómina, producción o importaciones NO incluidos en el precio.
+    </p>
     <div class="cards">
         @if (this.products$ | async; as products) {
             <p-carousel [value]="products" [responsiveOptions]="this.responsive" [circular]="true" [numVisible]="3" [numScroll]="3">
@@ -10,12 +12,11 @@
                             <img [src]="product.img" alt="IMAGE">
                         </div>
                         <div class="info">
-                            <h2 >{{product.clients}} clientes</h2>
                             <h1 class="product-name">{{product.name}}</h1>
                             <p>{{product.details}}</p>
                         </div>
                         <div class="card-footer" >
-                            <h4>Cotizar</h4>
+                            <h4></h4>
                         </div>
                     </div>
         

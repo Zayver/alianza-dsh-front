@@ -14,7 +14,7 @@ import { Popover } from 'primeng/popover';
 export class HeaderComponent {
 
   readonly subNavigation = [
-    {path: 'contact', name: 'Contáctanos'},
+    {path: 'contact', name: 'Contáctenos'},
     {path: 'products', name: 'Productos'},
     {path: 'about-us', name: 'Quiénes somos'},
     {path: 'clients', name: 'Nuestros clientes'},
