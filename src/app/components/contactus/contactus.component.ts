@@ -18,7 +18,7 @@ import { MailService } from '@services/mail.service';
 import { MessageService } from 'primeng/api';
 import { finalize, timer } from 'rxjs';
 import { Router } from '@angular/router';
-
+import { Select } from 'primeng/select';
 
 @Component({
   selector: 'alianzadsh-contactus',
@@ -31,7 +31,9 @@ import { Router } from '@angular/router';
     KeyFilter,
     RecaptchaModule,
     NgClass,
-    Button
+    Button,
+    Select,
+    
   ],
   templateUrl: './contactus.component.html',
   styleUrls: ['./contactus.component.scss'],
@@ -47,6 +49,13 @@ export class ContactusComponent implements OnInit {
   form!: FormGroup;
   loading = signal(false);
 
+  readonly services = [
+    { value: 'SOFTWARE O HARDWARE', display: 'Software o Hardware' },
+    { value: 'SUPPORT_SERVICE', display: 'Soporte' },
+  ];
+
+  selectedFiles: File[] = [];
+
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       firstName: ['', Validators.required],
@@ -56,6 +65,7 @@ export class ContactusComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       tel: ['', Validators.required],
       comments: [''],
+      serviceType: ['', Validators.required],
     });
   }
 

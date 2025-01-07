@@ -33,6 +33,17 @@
             aria-required="true"
           />
         </div>
+        <div class="form-item expand custom-select">
+          <label for="serviceType" class="required">Tipo de servicio</label>
+          <p-select
+            [options]="services"
+            optionValue="value"
+            optionLabel="display"
+            formControlName="serviceType"
+            id="serviceType"
+            aria-required="true"
+          ></p-select>
+        </div>
 
         <div class="form-item">
           <label for="companyName" class="required">Nombre de la empresa</label>
