@@ -45,7 +45,8 @@ export class ProductsService {
     },
     {
       name: 'Modulos Independientes SYSplus',
-      details: `Para empresas cuyo objeto social no es el servicio contable.`,
+      details: `Para empresas cuyo objeto social no es el servicio contable.
+      • Facturacion • Compras • Inventarios • Cuentas por pagar • Tesoreria • Contabilidad • Nomina`,
       img: '/images/products/contabilidad.png',
       price: 20000,
       clients: 500,
@@ -53,7 +54,7 @@ export class ProductsService {
     },
     {
       name: 'Planes de servicios',
-      details: `• Capacitaciones personalizadas.\n
+      details: `Para servicios diseñados para satisfacer las necesidades del cliente: • Capacitaciones personalizadas.\n
       • Contratos de asesoría mensual.\n
       • Bolsas de minutos para servicios de soporte (preparadas).`,
       img: '/images/products/servicio.png',
