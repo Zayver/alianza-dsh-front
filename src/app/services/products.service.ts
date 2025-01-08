@@ -32,24 +32,6 @@ export class ProductsService {
       code: 'sysplus_comercial',
     },
     {
-      name: 'SYSplus Contabilidad',
-      details: `Para empresas cuyo objeto social no es el servicio contable.`,
-      img: '/images/products/contabilidad.png',
-      price: 20000,
-      clients: 500,
-      code: 'sysplus_accounting',
-    },
-    {
-      name: 'Planes de servicio',
-      details: `Programa para una empresa de servicios que no lleva inventario ni compras. Manejo completo
-        de facturación, cartera, contabilidad, cuentas por pagar y tesorería. Incluye la posibilidad de
-        facturar con POS o Mostrador.`,
-      img: '/images/products/servicio.png',
-      price: 300000,
-      clients: 320,
-      code: 'sysplus_services',
-    },
-    {
       name: 'SYSplus ERP',
       details: `Programa para una empresa mediana o grande que lleva su propia contabilidad. Manejo
         completo de inventario, ordenes de producción, facturación, pedidos, remisiones, ruteros de
@@ -62,7 +44,25 @@ export class ProductsService {
       code: 'sysplus_erp',
     },
     {
-      name: 'Servicio de soporte',
+      name: 'Modulos Independientes SYSplus',
+      details: `Para empresas cuyo objeto social no es el servicio contable.`,
+      img: '/images/products/contabilidad.png',
+      price: 20000,
+      clients: 500,
+      code: 'sysplus_accounting',
+    },
+    {
+      name: 'Planes de servicios',
+      details: `• Capacitaciones personalizadas.\n
+      • Contratos de asesoría mensual.\n
+      • Bolsas de minutos para servicios de soporte (preparadas).`,
+      img: '/images/products/servicio.png',
+      price: 300000,
+      clients: 320,
+      code: 'sysplus_services',
+    },
+    {
+      name: 'Otros Productos',
       details: `Servicios de Hardware y Software, aplicación SYSplus. Desarrollo de aplicaciones.\n
       • Mantenimiento de Hardware y equipos. \n
       • Software aplicación Sysplus. \n

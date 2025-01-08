@@ -110,6 +110,10 @@
       color: #010101 !important; /* Texto negro */
     }
 
+    ::ng-deep .p-select-label{
+      color: white;
+    }
+    
     ::ng-deep .p-dropdown .p-dropdown-label {
       background-color: white !important;
       color: black !important;

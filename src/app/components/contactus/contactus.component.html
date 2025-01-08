@@ -1,11 +1,12 @@
 <div class="contact-container">
   <div class="titles">
     <h1 class="title">Contáctenos</h1>
-    <p> <br> Por
-      favor llena todos los campos siguientes, <span
-      class="text-red-500"
-      >los elementos marcados con * son obligatorios.</span
-        >
+    <p>
+      <br />
+      Por favor llena todos los campos ,
+      <span class="text-red-500"
+        >los elementos marcados con * son obligatorios.</span
+      >
     </p>
   </div>
 
@@ -57,7 +58,7 @@
         </div>
 
         <div class="form-item">
-          <label for="employeeQuantity">Cantidad de Terminales</label>
+          <label for="employeeQuantity">Cantidad de equipos</label>
           <p-input-number
             formControlName="employeeQuantity"
             [min]="0"
@@ -92,12 +93,8 @@
           />
         </div>
 
-       
-
         <div class="form-item expand">
-          <label for="comments"
-            >Describa su solicitud</label
-          >
+          <label for="comments">Describa su solicitud</label>
           <textarea
             id="comments"
             pTextarea
@@ -108,11 +105,20 @@
         </div>
       </div>
 
-        <div class="form-item expand">
-          <re-captcha (resolved)="resolved($event)" [siteKey]="this.recaptchaKey"></re-captcha>
-        </div>
+      <div class="form-item expand">
+        <re-captcha
+          (resolved)="resolved($event)"
+          [siteKey]="this.recaptchaKey"
+        ></re-captcha>
+      </div>
 
-        <p-button type="submit" [disabled]="this.form.invalid || !this.recaptchaOk()" [loading]="this.loading()" styleClass="btn-submit" label="Enviar" />
+      <p-button
+        type="submit"
+        [disabled]="this.form.invalid || !this.recaptchaOk()"
+        [loading]="this.loading()"
+        styleClass="btn-submit"
+        label="Enviar"
+      />
     </form>
   </div>
 </div>
