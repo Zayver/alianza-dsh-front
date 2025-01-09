@@ -54,9 +54,9 @@ export class ProductsService {
     },
     {
       name: 'Planes de servicios',
-      details: `Para servicios diseñados para satisfacer las necesidades del cliente: • Capacitaciones personalizadas.\n
+      details: `Servicios diseñados para satisfacer las necesidades del cliente: • Capacitaciones personalizadas.\n
       • Contratos de asesoría mensual.\n
-      • Bolsas de minutos para servicios de soporte (preparadas).`,
+      • Bolsas de minutos para servicios de soporte (prepagadas).`,
       img: '/images/products/servicio.png',
       price: 300000,
       clients: 320,
@@ -66,12 +66,7 @@ export class ProductsService {
       name: 'Otros Productos',
       details: `Servicios de Hardware y Software, aplicación SYSplus. Desarrollo de aplicaciones.\n
       • Mantenimiento de Hardware y equipos. \n
-      • Software aplicación Sysplus. \n
-      • Desarrollo de aplicaciones.\n
-      • Desarrollo de reportes.\n
-      • Capacitaciones personalizadas.\n
-      • Contratos de asesoría mensual.\n
-      • Bolsas de minutos para servicios de soporte (preparadas).`,
+      • Desarrollo de reportes.\n`,
       img: '/images/products/soporte.png',
       price: 85000,
       clients: 1000,
