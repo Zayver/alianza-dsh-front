@@ -10,11 +10,12 @@ export class ProductsService {
   private readonly products: Product[] = [
     {
       name: 'SYSplus Empresarial',
-      details: `Programa para una empresa pequeña o mediana que lleva su propia contabilidad. Manejo
-        completo de inventario, ordenes de producción, facturación, pedidos, remisiones, ruteros de
-        entrega, cartera, compras y órdenes de compra, cuentas por pagar, tesorería y contabilidad.
-        Incluye POS y Mostrador para registro de ventas. Opcionalmente puede agregar módulos de
-        CRM, nómina, producción o importaciones NO incluidos en el precio.`,
+      details: `Para una empresa pequeña o mediana que lleva su propia contabilidad. Manejo completo de Inventario, Facturación (pedidos, remisiones, ruteros de entrega), Cartera, Compras (órdenes, sugerido de compras), Cuentas por pagar, Tesorería y Contabilidad.
+*Incluye la posibilidad de facturar con POS o Mostrador.
+ 
+Opcionalmente puede agregar módulos de CRM, Nómina, Producción, Importaciones o Aplicaciones web NO incluidos en el precio.
+**Si lo deseas también puedes cambiar a la siguiente versión de SYSplus: ERP.
+`,
       img: '/images/products/empresarial.png',
       price: 50000,
       clients: 150,
@@ -22,10 +23,12 @@ export class ProductsService {
     },
     {
       name: 'SYSplus Comercial',
-      details: `Programa para una empresa comercial o autoservicio que no lleva contabilidad en sus
-        instalaciones. Manejo completo de inventario, facturación, pedidos, remisiones, ruteros de
-        entrega, cartera, compras y órdenes de compra, cuentas por pagar y tesorería. Incluye la
-        posibilidad de facturar con POS o Mostrador.`,
+      details: `Para una empresa comercial o autoservicio que no lleva contabilidad en sus instalaciones. Manejo completo de Inventario, Facturación, Cartera, Compras, Cuentas por pagar y Tesorería.
+*Incluye la posibilidad de facturar con POS o Mostrador.
+ 
+Opcionalmente puede agregar módulos de CRM, Nómina, Producción, Importaciones o Aplicaciones web NO incluidos en el precio.
+**Si lo deseas también puedes cambiar a la siguiente versión de SYSplus: Empresarial o ERP.
+`,
       img: '/images/products/comercial.png',
       price: 150000,
       clients: 250,
@@ -33,11 +36,10 @@ export class ProductsService {
     },
     {
       name: 'SYSplus ERP',
-      details: `Programa para una empresa mediana o grande que lleva su propia contabilidad. Manejo
-        completo de inventario, ordenes de producción, facturación, pedidos, remisiones, ruteros de
-        entrega, cartera, compras y órdenes de compra, cuentas por pagar, tesorería y contabilidad.
-        Incluye POS y Mostrador para registro de ventas. Opcionalmente puede agregar módulos de
-        Producción, Nómina, CRM e Importaciones no incluidos en el precio.`,
+      details: `Para una empresa mediana a grande que lleva su propia contabilidad. Manejo completo de Inventario (órdenes de producción, clasificación de artículos a 3 niveles), Facturación (canales de distribución, pedidos, remisiones, ruteros de entrega), Cartera, Compras (órdenes de compra, sugerido), Cuentas por pagar, Tesorería y Contabilidad (Centro de costos a 3 niveles). *Incluye la posibilidad de facturar con POS o Mostrador.
+ 
+Opcionalmente puede agregar módulos de CRM, Nómina, Producción, Importaciones o Aplicaciones web NO incluidos en el precio.
+`,
       img: '/images/products/erp.png',
       price: 135000,
       clients: 20,
@@ -45,7 +47,7 @@ export class ProductsService {
     },
     {
       name: 'Modulos Independientes SYSplus',
-      details: `Para empresas cuyo objeto social no es el servicio contable.
+      details: `Tambien puedes adquirir sólo los modulos que necesites:
       • Facturacion • Compras • Inventarios • Cuentas por pagar • Tesoreria • Contabilidad • Nomina`,
       img: '/images/products/contabilidad.png',
       price: 20000,
@@ -54,9 +56,11 @@ export class ProductsService {
     },
     {
       name: 'Planes de servicios',
-      details: `Servicios diseñados para satisfacer las necesidades del cliente: • Capacitaciones personalizadas.\n
+      details: `Servicios diseñados para brindar beneficios extras a nuestros clientes: • Capacitaciones personalizadas.\n
       • Contratos de asesoría mensual.\n
-      • Bolsas de minutos para servicios de soporte (prepagadas).`,
+      • Bolsas de minutos para servicios de soporte (prepagadas).
+      • Planes Copia de seguridad externa de la base de datos
+      • Servicio de Mantenimiento y chequeo de la Base de Datos.`,
       img: '/images/products/servicio.png',
       price: 300000,
       clients: 320,
@@ -64,7 +68,7 @@ export class ProductsService {
     },
     {
       name: 'Otros Productos',
-      details: `Servicios de Hardware y Software, aplicación SYSplus. Desarrollo de aplicaciones.\n
+      details: `• Servicios de Hardware y Software • Software Administrativo y Contable SYSplus.•  Desarrollo de aplicaciones.\n
       • Mantenimiento de Hardware y equipos. \n
       • Desarrollo de reportes.\n`,
       img: '/images/products/soporte.png',

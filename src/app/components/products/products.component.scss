@@ -57,3 +57,7 @@
 ::ng-deep .p-carousel-viewport{
     @apply py-6;
 }
+
+::ng-deep.p-button-secondary{
+    color: white;
+}
