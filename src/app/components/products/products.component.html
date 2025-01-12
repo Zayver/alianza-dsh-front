@@ -1,26 +1,27 @@
 <div class="wrapper">
-    <h1 class="title">NUESTROS PRODUCTOS</h1>
-    <p class="subtitle">Conoce nuestros productos y servicios , selecciona uno para contactarnos!
-    </p>
-    <div class="cards">
-        @if (this.products$ | async; as products) {
-            <p-carousel [value]="products" [responsiveOptions]="this.responsive" [circular]="true" [numVisible]="3" [numScroll]="3">
-                <ng-template let-product let-index #item>
-                    <div class="card" [routerLink]="['/', 'product']" [queryParams]="{code: product.code}">
-                        <div class="card-header">
-                            <img [src]="product.img" alt="IMAGE">
-                        </div>
-                        <div class="info">
-                            <h1 class="product-name">{{product.name}}</h1>
-                            <p>{{product.details}}</p>
-                        </div>
-                        <div class="card-footer" >
-                            <h4>Cotiza</h4>
-                        </div>
-                    </div>
-        
-                </ng-template>
-            </p-carousel>
-        }
+  <h1 class="title">NUESTROS PRODUCTOS</h1>
+  <p class="subtitle">
+    Conoce nuestros productos y servicios, selecciona uno para contactarnos!
+  </p>
+  <div class="cards-container">
+    <div *ngIf="products$ | async as products" class="cards-grid">
+      <div class="card" *ngFor="let product of products$ | async">
+        <div class="card-header">
+          <img [src]="product.img" alt="Imagen del Producto" />
+        </div>
+        <div class="info">
+          <h1 class="product-name" style="justify-content: center; display: flex; align-items: center;">{{ product.name }}</h1>
+          <p [innerHTML]="formatDetails(product.details)"></p>
+        </div>
+        <div class="card-footer">
+          <button
+            class="cotiza-button"
+            (click)="navigateToProduct(product.code)"
+          >
+            Cotiza
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

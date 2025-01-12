@@ -9,19 +9,6 @@ import { Observable, of, throwError } from 'rxjs';
 export class ProductsService {
   private readonly products: Product[] = [
     {
-      name: 'SYSplus Empresarial',
-      details: `Para una empresa pequeña o mediana que lleva su propia contabilidad. Manejo completo de Inventario, Facturación (pedidos, remisiones, ruteros de entrega), Cartera, Compras (órdenes, sugerido de compras), Cuentas por pagar, Tesorería y Contabilidad.
-*Incluye la posibilidad de facturar con POS o Mostrador.
- 
-Opcionalmente puede agregar módulos de CRM, Nómina, Producción, Importaciones o Aplicaciones web NO incluidos en el precio.
-**Si lo deseas también puedes cambiar a la siguiente versión de SYSplus: ERP.
-`,
-      img: '/images/products/empresarial.png',
-      price: 50000,
-      clients: 150,
-      code: 'sysplus_enterprise',
-    },
-    {
       name: 'SYSplus Comercial',
       details: `Para una empresa comercial o autoservicio que no lleva contabilidad en sus instalaciones. Manejo completo de Inventario, Facturación, Cartera, Compras, Cuentas por pagar y Tesorería.
 *Incluye la posibilidad de facturar con POS o Mostrador.
@@ -33,6 +20,19 @@ Opcionalmente puede agregar módulos de CRM, Nómina, Producción, Importaciones
       price: 150000,
       clients: 250,
       code: 'sysplus_comercial',
+    },
+    {
+      name: 'SYSplus Empresarial',
+      details: `Para una empresa pequeña o mediana que lleva su propia contabilidad. Manejo completo de Inventario, Facturación (pedidos, remisiones, ruteros de entrega), Cartera, Compras (órdenes, sugerido de compras), Cuentas por pagar, Tesorería y Contabilidad.
+*Incluye la posibilidad de facturar con POS o Mostrador.
+ 
+Opcionalmente puede agregar módulos de CRM, Nómina, Producción, Importaciones o Aplicaciones web NO incluidos en el precio.
+**Si lo deseas también puedes cambiar a la siguiente versión de SYSplus: ERP.
+`,
+      img: '/images/products/empresarial.png',
+      price: 50000,
+      clients: 150,
+      code: 'sysplus_enterprise',
     },
     {
       name: 'SYSplus ERP',
@@ -68,7 +68,7 @@ Opcionalmente puede agregar módulos de CRM, Nómina, Producción, Importaciones
     },
     {
       name: 'Otros Productos',
-      details: `• Servicios de Hardware y Software • Software Administrativo y Contable SYSplus.•  Desarrollo de aplicaciones.\n
+      details: `Ofrecemos otros servicios y productos como: • Servicios de Hardware y Software • Software Administrativo y Contable SYSplus.•  Desarrollo de aplicaciones.\n
       • Mantenimiento de Hardware y equipos. \n
       • Desarrollo de reportes.\n`,
       img: '/images/products/soporte.png',

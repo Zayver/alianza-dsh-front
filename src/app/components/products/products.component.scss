@@ -1,63 +1,101 @@
-.wrapper{
-    @apply py-10 flex flex-col items-center gap-2 text-center bg-white;
+.wrapper {
+    width: 100%;
     background-color: rgb(28, 14, 45);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .title {
+    @apply text-4xl font-extrabold;
+    color: yellow;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .cards-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
 
-    .title{
-        @apply text-4xl font-extrabold text-yellow-500;
+  .cards-grid{
+    display: grid;
+    width: 85%;
+    height: auto;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .cards {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido se distribuya verticalmente */
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    text-align: justify;
+    height: 100%; /* Mantiene un tamaño consistente */
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-header img {
+    width: 100%;
+    height: 300px;
+    padding: 20px;
+    background-color: #ececec;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .info {
+    padding: 20px;
+  }
+  
+  .product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card-footer {
+    margin-top: auto;
+    padding: 10px;
+    background-color: #f8f9fa;
+    text-align: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  .cotiza-button {
+    background-color: #ffcb1e; 
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    width: 80%;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #ff7e22; /* Azul más oscuro */
     }
-
-    .subtitle{
-        @apply text-xl text-gray-300;
-    }
-
-    .cards{
-        @apply w-full max-w-[100vw] md:px-4 py-4; 
-        background-color: rgb(28, 14, 45);
-        
-    }
-    .card{
-        @apply flex flex-col overflow-hidden rounded-3xl shadow-lg mx-4 md:h-full cursor-pointer bg-white;
-
-        img{
-            @apply w-full object-cover h-72;
-        }
-
-        .info{
-            @apply flex flex-col gap-2 md:p-4 py-2 p-1 md:flex-1 ;
-            color: rgb(28, 14, 45);
-
-            h2{
-                @apply font-bold md:text-lg;
-            }
-
-            p{
-                @apply md:text-lg
-            }
-            .product-name{
-                @apply font-extrabold md:text-4xl;
-            }
-        }
-        .card-header{
-            @apply font-extrabold text-4xl p-9 ;
-            color: rgb(28, 14, 45);
-            background-color: #ebfbbf;
-        }
-        .card-footer{
-            @apply font-extrabold text-4xl p-3 ;
-            color: rgb(28, 14, 45);;
-            background-color: #facc15;;
-        }
-
-        &:hover{
-            transform: scale(1.03);
-        }
-    }
-}
-
-::ng-deep .p-carousel-viewport{
-    @apply py-6;
-}
-
-::ng-deep.p-button-secondary{
-    color: white;
-}
+  }
+  
+  
